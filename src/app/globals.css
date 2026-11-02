@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #09080e;
+  --bg-elevated: #12101b;
+  --bg-card-hover: #181524;
+  --accent-purple: #8b5cf6;
+  --accent-violet: #a855f7;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #09080e;
+  color: #f8fafc;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Micro-dot matrix background matching Rebate Pad reference */
+.bg-dot-matrix {
+  background-color: #09080e;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Outlined violet hatched display word ("zero.", "Hold it. Get paid.") */
+.text-stroke-violet {
+  color: rgba(168, 85, 247, 0.18);
+  -webkit-text-stroke: 1.5px #a855f7;
+  text-shadow: 0 0 28px rgba(168, 85, 247, 0.25);
+}
+
+/* Jagged receipt bottom border for Buy Preview card */
+.receipt-edge {
+  position: relative;
+}
+.receipt-edge::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 8px;
+  background-image: radial-gradient(circle at 8px 8px, #09080e 6px, transparent 6.5px);
+  background-size: 16px 8px;
+}
+
+/* Custom range slider for Bonus Rate & Economics */
+input[type="range"].rebate-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: #231e36;
+  outline: none;
+}
+
+input[type="range"].rebate-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #a855f7;
+  border: 2px solid #f3e8ff;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].rebate-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09080e;
+}
+::-webkit-scrollbar-thumb {
+  background: #231f33;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3354;
+}
