@@ -39,14 +39,14 @@ const WALLET_PROVIDERS = [
     name: "Robinhood Wallet",
     badge: "RECOMMENDED",
     address: "0x71C...89A2",
-    color: "from-[#8B5CF6] to-[#6D28D9]",
+    color: "from-[#222] to-[#111]",
     desc: "Native Robinhood Chain L2 signer with 0-latency rebate indexing",
   },
   {
     name: "Rabby Wallet",
     badge: "POPULAR",
     address: "0x71C...89A2",
-    color: "from-[#6366F1] to-[#4338CA]",
+    color: "from-[#1a1a1a] to-[#111]",
     desc: "Pre-sign bonus simulation & instant balance preview",
   },
   {
@@ -114,9 +114,9 @@ export function AppShell({ children }: AppShellProps) {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#09080E] text-[#F8FAFC]">
+    <div className="min-h-screen flex bg-[#080808] text-[#e8e8e8]">
       {/* Fixed Left Sidebar (Desktop) */}
-      <aside className="hidden lg:flex w-[224px] shrink-0 flex-col justify-between border-r border-white/[0.06] bg-[#0B0A10] fixed inset-y-0 left-0 z-30 select-none">
+      <aside className="hidden lg:flex w-[224px] shrink-0 flex-col justify-between border-r border-white/[0.06] bg-[#0d0d0d] fixed inset-y-0 left-0 z-30 select-none">
         <div>
           {/* Brand Logo */}
           <div className="h-16 px-5 flex items-center gap-2.5">
@@ -124,20 +124,16 @@ export function AppShell({ children }: AppShellProps) {
               onClick={() => setActiveTab("discover")}
               className="flex items-center gap-2.5 text-left group focus:outline-none"
             >
-              <div className="w-7 h-7 rounded-lg bg-[#161224] border border-[#8B5CF6]/30 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.25)] group-hover:border-[#A855F7] transition-colors">
-                <svg viewBox="0 0 32 32" className="w-4 h-4">
-                  <path
-                    d="M7 6 H17 C21 6 23.5 8.5 23.5 11.5 C23.5 14 21.8 15.8 19 16.5 L24 26 H19 L14.5 17 H12 V26 H7 Z M12 10 V13.5 H16.8 C18.2 13.5 19 12.7 19 11.7 C19 10.7 18.2 10 16.8 10 Z"
-                    fill="#ffffff"
-                  />
-                  <path
-                    d="M7 20 C11 20 14 14 19.5 14 V11.5 L24.5 15.5 L19.5 19.5 V17 C15 17 12 22.5 7 22.5 Z"
-                    fill="#A855F7"
-                  />
-                </svg>
+              <div className="w-7 h-7 rounded-md overflow-hidden bg-[#111] flex items-center justify-center">
+                <img
+                  src="/logo.webp"
+                  alt="BONLOOP"
+                  className="w-7 h-7 object-cover"
+                  style={{ filter: "brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(45deg)" }}
+                />
               </div>
-              <span className="font-bold tracking-tight text-[17px] text-white">
-                Rebate <span className="text-[#A855F7]">Pad</span>
+              <span className="font-bold tracking-tight text-[16px] text-white font-mono">
+                BON<span className="text-white">LOOP</span>
               </span>
             </button>
           </div>
@@ -153,13 +149,13 @@ export function AppShell({ children }: AppShellProps) {
                   onClick={() => setActiveTab(item.id)}
                   className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[14px] font-medium transition-all duration-150 ${
                     isActive
-                      ? "bg-[#1B162B] text-white border border-[#8B5CF6]/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
-                      : "text-[#948FA8] hover:text-white hover:bg-white/[0.03] border border-transparent"
+                      ? "bg-[#111] text-white border border-white/30/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                      : "text-[#777] hover:text-white hover:bg-white/[0.03] border border-transparent"
                   }`}
                 >
                   <Icon
                     className={`w-4 h-4 transition-colors ${
-                      isActive ? "text-[#A855F7]" : "text-[#7E7896]"
+                      isActive ? "text-white" : "text-[#555]"
                     }`}
                   />
                   <span>{item.label}</span>
@@ -176,19 +172,19 @@ export function AppShell({ children }: AppShellProps) {
             onClick={(e) => {
               e.preventDefault();
               addToast({
-                title: "@rebatelaunch on X",
-                subtitle: "Following Rebate Pad updates on Robinhood Chain",
+                title: "@bonloop on X",
+                subtitle: "Following BONLOOP updates on Robinhood Chain",
                 type: "info",
               });
             }}
-            className="inline-flex items-center justify-center w-7 h-7 rounded-md text-[#7E7896] hover:text-white hover:bg-white/[0.05] transition-colors mb-3"
-            title="Rebate Pad on X"
+            className="inline-flex items-center justify-center w-7 h-7 rounded-md text-[#555] hover:text-white hover:bg-white/[0.05] transition-colors mb-3"
+            title="BONLOOP on X"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
-          <div className="flex items-center gap-2 text-[10px] font-mono tracking-[0.14em] uppercase text-[#645E78]">
+          <div className="flex items-center gap-2 text-[10px] font-mono tracking-[0.14em] uppercase text-[#555]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
             <span>LIVE ON ROBINHOOD CHAIN</span>
           </div>
@@ -196,17 +192,17 @@ export function AppShell({ children }: AppShellProps) {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-1 lg:pl-[224px] flex flex-col min-h-screen bg-dot-matrix pb-20 lg:pb-12">
+      <div className="flex-1 lg:pl-[224px] flex flex-col min-h-screen bg-[#080808] pb-20 lg:pb-12">
         {/* Sticky Top Header */}
-        <header className="sticky top-0 z-20 h-16 border-b border-white/[0.06] bg-[#0B0A10]/85 backdrop-blur-xl px-4 sm:px-8 flex items-center justify-between gap-3">
+        <header className="sticky top-0 z-20 h-16 border-b border-white/[0.06] bg-[#0d0d0d]/85 backdrop-blur-xl px-4 sm:px-8 flex items-center justify-between gap-3">
           {/* Mobile Brand */}
           <div className="flex lg:hidden items-center gap-2 mr-1">
             <button
               onClick={() => setActiveTab("discover")}
               className="flex items-center gap-2"
             >
-              <div className="w-7 h-7 rounded-lg bg-[#161224] border border-[#8B5CF6]/40 flex items-center justify-center">
-                <span className="font-bold text-xs text-[#A855F7]">R</span>
+              <div className="w-7 h-7 rounded-lg bg-[#111] border border-white/30/40 flex items-center justify-center">
+                <span className="font-bold text-xs text-white">R</span>
               </div>
             </button>
           </div>
@@ -214,7 +210,7 @@ export function AppShell({ children }: AppShellProps) {
           {/* Global Token Search Input */}
           <div className="relative flex-1 max-w-md">
             <div className="relative flex items-center">
-              <Search className="w-4 h-4 text-[#645E78] absolute left-3.5 pointer-events-none" />
+              <Search className="w-4 h-4 text-[#555] absolute left-3.5 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
@@ -222,12 +218,12 @@ export function AppShell({ children }: AppShellProps) {
                 onBlur={() => setTimeout(() => setSearchFocused(false), 180)}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search tokens..."
-                className="w-full h-9 pl-9 pr-8 rounded-lg bg-[#09080E] border border-white/[0.08] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6] transition-colors"
+                className="w-full h-9 pl-9 pr-8 rounded-lg bg-[#080808] border border-white/[0.08] text-sm text-white placeholder-[#444] focus:outline-none focus:border-white/30 transition-colors"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 text-[#645E78] hover:text-white"
+                  className="absolute right-2.5 text-[#555] hover:text-white"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -237,8 +233,8 @@ export function AppShell({ children }: AppShellProps) {
             {/* Instant Search Dropdown */}
             {searchFocused && searchResults.length > 0 && (
               <div className="absolute left-0 right-0 top-11 rounded-xl border border-white/[0.1] bg-[#12101B] shadow-2xl overflow-hidden z-50">
-                <div className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-[#645E78] border-b border-white/[0.06]">
-                  Robinhood Chain Pools ({searchResults.length})
+                <div className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-[#555] border-b border-white/[0.06]">
+                  BONLOOP Pools ({searchResults.length})
                 </div>
                 {searchResults.map((token) => (
                   <button
@@ -253,23 +249,23 @@ export function AppShell({ children }: AppShellProps) {
                       <img
                         src={token.logoUrl}
                         alt={token.name}
-                        className="w-7 h-7 rounded-md object-cover bg-[#1B162B]"
+                        className="w-7 h-7 rounded-md object-cover bg-[#111]"
                       />
                       <div>
                         <div className="text-xs font-semibold text-white">
                           {token.name}{" "}
-                          <span className="text-[#7E7896] font-mono">
+                          <span className="text-[#555] font-mono">
                             ${token.ticker}
                           </span>
                         </div>
-                        <div className="text-[10px] font-mono text-[#645E78]">
+                        <div className="text-[10px] font-mono text-[#555]">
                           MC: ${(token.marketCap / 1000).toFixed(1)}K · Pair:{" "}
                           {token.pairAsset}
                         </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="inline-block rounded bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 px-1.5 py-0.5 font-mono text-[11px] font-bold text-[#C084FC]">
+                      <span className="inline-block rounded bg-white/15 border border-white/30/30 px-1.5 py-0.5 font-mono text-[11px] font-bold text-white">
                         +{token.bonusRate}% bonus
                       </span>
                     </div>
@@ -283,8 +279,8 @@ export function AppShell({ children }: AppShellProps) {
           <div className="flex items-center gap-2.5">
             {/* Network Badge */}
             <div className="hidden md:flex items-center gap-2 h-9 px-3.5 rounded-lg border border-white/[0.08] bg-[#12101B] text-xs">
-              <Globe className="w-3.5 h-3.5 text-[#A855F7]" />
-              <span className="text-[#7E7896]">Network:</span>
+              <Globe className="w-3.5 h-3.5 text-white" />
+              <span className="text-[#555]">Network:</span>
               <span className="font-semibold text-white">Robinhood Chain</span>
             </div>
 
@@ -294,21 +290,21 @@ export function AppShell({ children }: AppShellProps) {
                 onClick={() => setConnectModalOpen(true)}
                 className="h-9 px-3.5 rounded-lg border border-white/[0.1] bg-[#151221] hover:bg-[#1D192E] text-xs font-semibold text-white flex items-center gap-2 transition-colors cursor-pointer"
               >
-                <Wallet className="w-3.5 h-3.5 text-[#C084FC]" />
+                <Wallet className="w-3.5 h-3.5 text-white" />
                 <span>Connect Wallet</span>
               </button>
             ) : (
               <div className="relative">
                 <button
                   onClick={() => setWalletDropdownOpen((v) => !v)}
-                  className="h-9 px-3 rounded-lg border border-[#8B5CF6]/40 bg-[#181329] hover:bg-[#211A38] text-xs font-mono text-white flex items-center gap-2.5 transition-colors cursor-pointer"
+                  className="h-9 px-3 rounded-lg border border-white/30/40 bg-[#111] hover:bg-[#1e1e1e] text-xs font-mono text-white flex items-center gap-2.5 transition-colors cursor-pointer"
                 >
-                  <span className="hidden sm:inline-flex items-center gap-1.5 text-[#C084FC] font-semibold">
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-white font-semibold">
                     {ethBalance.toFixed(2)} ETH
                     <span className="text-white/20">|</span>
                     ${usdgBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })} USDG
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-[#8B5CF6]/25 text-white font-semibold flex items-center gap-1.5">
+                  <span className="px-2 py-0.5 rounded bg-white/25 text-white font-semibold flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
                     {walletAddress}
                   </span>
@@ -318,7 +314,7 @@ export function AppShell({ children }: AppShellProps) {
                   <div className="absolute right-0 mt-2 w-64 rounded-xl border border-white/[0.1] bg-[#13101E] p-3 shadow-2xl z-50">
                     <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/[0.07]">
                       <div>
-                        <div className="text-[11px] text-[#7E7896]">
+                        <div className="text-[11px] text-[#555]">
                           {walletProviderName}
                         </div>
                         <div className="font-mono text-xs font-bold text-white">
@@ -332,7 +328,7 @@ export function AppShell({ children }: AppShellProps) {
 
                     <div className="grid grid-cols-2 gap-2 mb-3">
                       <div className="rounded-lg bg-[#0B0912] p-2 border border-white/[0.05]">
-                        <div className="text-[10px] font-mono text-[#7E7896]">
+                        <div className="text-[10px] font-mono text-[#555]">
                           ETH BALANCE
                         </div>
                         <div className="font-mono text-xs font-bold text-white mt-0.5">
@@ -340,7 +336,7 @@ export function AppShell({ children }: AppShellProps) {
                         </div>
                       </div>
                       <div className="rounded-lg bg-[#0B0912] p-2 border border-white/[0.05]">
-                        <div className="text-[10px] font-mono text-[#7E7896]">
+                        <div className="text-[10px] font-mono text-[#555]">
                           USDG BALANCE
                         </div>
                         <div className="font-mono text-xs font-bold text-white mt-0.5">
@@ -362,7 +358,7 @@ export function AppShell({ children }: AppShellProps) {
                       </button>
                       <button
                         onClick={handleCopyAddress}
-                        className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-[#948FA8] hover:text-white hover:bg-white/[0.05]"
+                        className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-[#777] hover:text-white hover:bg-white/[0.05]"
                       >
                         <Copy className="w-3.5 h-3.5" />
                         <span>Copy Wallet Address</span>
@@ -386,7 +382,7 @@ export function AppShell({ children }: AppShellProps) {
             {/* Prominent Launch Token CTA */}
             <button
               onClick={() => setActiveTab("launch")}
-              className="h-9 px-3.5 sm:px-4 rounded-lg bg-[#8B5CF6] hover:bg-[#7C3AED] active:bg-[#6D28D9] text-xs font-semibold text-white flex items-center gap-1.5 shadow-[0_0_20px_rgba(139,92,246,0.35)] transition-all cursor-pointer"
+              className="h-9 px-3.5 sm:px-4 rounded-lg bg-white hover:bg-white active:bg-white/80 text-xs font-semibold text-black flex items-center gap-1.5  transition-all cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
               <span>Launch Token</span>
@@ -399,7 +395,7 @@ export function AppShell({ children }: AppShellProps) {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 h-16 border-t border-white/[0.08] bg-[#0B0A10]/95 backdrop-blur-xl grid grid-cols-6 px-1">
+      <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 h-16 border-t border-white/[0.08] bg-[#0d0d0d]/95 backdrop-blur-xl grid grid-cols-6 px-1">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -408,7 +404,7 @@ export function AppShell({ children }: AppShellProps) {
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={`flex flex-col items-center justify-center gap-1 text-[10px] font-medium ${
-                isActive ? "text-[#A855F7]" : "text-[#7E7896]"
+                isActive ? "text-white" : "text-[#555]"
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -430,21 +426,21 @@ export function AppShell({ children }: AppShellProps) {
           <div className="w-full max-w-md rounded-2xl border border-white/[0.1] bg-[#12101B] p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/20 border border-[#8B5CF6]/40 flex items-center justify-center">
-                  <Wallet className="w-4 h-4 text-[#C084FC]" />
+                <div className="w-8 h-8 rounded-lg bg-white/20 border border-white/30/40 flex items-center justify-center">
+                  <Wallet className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">
                     Connect a Wallet
                   </h3>
-                  <p className="text-xs text-[#7E7896]">
+                  <p className="text-xs text-[#555]">
                     Robinhood Chain Mainnet · Instant Bonus & Payouts
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setConnectModalOpen(false)}
-                className="p-1.5 rounded-lg text-[#7E7896] hover:text-white hover:bg-white/[0.06]"
+                className="p-1.5 rounded-lg text-[#555] hover:text-white hover:bg-white/[0.06]"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -455,7 +451,7 @@ export function AppShell({ children }: AppShellProps) {
                 <button
                   key={provider.name}
                   onClick={() => connectWallet(provider.name, provider.address)}
-                  className="w-full p-3.5 rounded-xl border border-white/[0.07] bg-[#161324] hover:bg-[#1E1930] hover:border-[#8B5CF6]/50 transition-all flex items-center justify-between text-left group cursor-pointer"
+                  className="w-full p-3.5 rounded-xl border border-white/[0.07] bg-[#141414] hover:bg-[#1e1e1e] hover:border-white/30/50 transition-all flex items-center justify-between text-left group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
                     <div
@@ -468,28 +464,28 @@ export function AppShell({ children }: AppShellProps) {
                         <span className="text-sm font-semibold text-white group-hover:text-[#D8B4FE] transition-colors">
                           {provider.name}
                         </span>
-                        <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/[0.06] text-[#C084FC]">
+                        <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/[0.06] text-white">
                           {provider.badge}
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#7E7896] mt-0.5">
+                      <p className="text-[11px] text-[#555] mt-0.5">
                         {provider.desc}
                       </p>
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-[#645E78] group-hover:text-white transition-transform group-hover:translate-x-0.5" />
+                  <ChevronRight className="w-4 h-4 text-[#555] group-hover:text-white transition-transform group-hover:translate-x-0.5" />
                 </button>
               ))}
             </div>
 
-            <div className="rounded-xl border border-[#8B5CF6]/20 bg-[#8B5CF6]/[0.06] p-3 text-[11px] text-[#948FA8] flex items-start gap-2.5">
-              <Sparkles className="w-4 h-4 text-[#C084FC] shrink-0 mt-0.5" />
+            <div className="rounded-xl border border-white/30/20 bg-white/[0.06] p-3 text-[11px] text-[#777] flex items-start gap-2.5">
+              <Sparkles className="w-4 h-4 text-white shrink-0 mt-0.5" />
               <div>
                 Demo wallet pre-loaded with{" "}
                 <strong className="text-white font-mono">4.25 ETH</strong>,{" "}
                 <strong className="text-white font-mono">$3,840.50 USDG</strong>,
                 and active positions in{" "}
-                <strong className="text-[#C084FC]">$REBATE, $APE, $RUBY, $HODL</strong>{" "}
+                <strong className="text-white">$BONLOOP, $RUBY, $APE, $RCAT</strong>{" "}
                 with claimable ETH/USDG dividends.
               </div>
             </div>
@@ -502,7 +498,7 @@ export function AppShell({ children }: AppShellProps) {
         {toasts.map((t) => (
           <div
             key={t.id}
-            className="pointer-events-auto rounded-xl border border-[#8B5CF6]/40 bg-[#141122]/95 backdrop-blur-md p-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.8)] flex items-start justify-between gap-3 animate-in slide-in-from-bottom-3"
+            className="pointer-events-auto rounded-xl border border-white/30/40 bg-[#111]/95 backdrop-blur-md p-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.8)] flex items-start justify-between gap-3 animate-in slide-in-from-bottom-3"
           >
             <div className="flex items-start gap-2.5">
               <CheckCircle2
@@ -510,17 +506,17 @@ export function AppShell({ children }: AppShellProps) {
                   t.type === "success"
                     ? "text-[#22C55E]"
                     : t.type === "purple"
-                    ? "text-[#C084FC]"
+                    ? "text-white"
                     : "text-[#60A5FA]"
                 }`}
               />
               <div>
                 <div className="text-xs font-bold text-white">{t.title}</div>
-                <div className="text-[11px] text-[#948FA8] mt-0.5 leading-snug">
+                <div className="text-[11px] text-[#777] mt-0.5 leading-snug">
                   {t.subtitle}
                 </div>
                 {t.txHash && (
-                  <div className="mt-1 flex items-center gap-1 text-[10px] font-mono text-[#A855F7]">
+                  <div className="mt-1 flex items-center gap-1 text-[10px] font-mono text-white">
                     <span>Tx: {t.txHash}</span>
                     <ExternalLink className="w-2.5 h-2.5" />
                   </div>
@@ -529,7 +525,7 @@ export function AppShell({ children }: AppShellProps) {
             </div>
             <button
               onClick={() => removeToast(t.id)}
-              className="text-[#645E78] hover:text-white"
+              className="text-[#555] hover:text-white"
             >
               <X className="w-3.5 h-3.5" />
             </button>

@@ -226,9 +226,14 @@ export const useRebateStore = create<RebateState>((set, get) => ({
     })),
 
   fetchInitialState: async () => {
+    // Store already has seed data as default — API is optional enrichment only.
+    // Use a 5s timeout so a slow/hung DB never blocks the UI.
     set({ isLoadingData: true });
     try {
-      const res = await fetch("/api/state", { cache: "no-store" });
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 5000);
+      const res = await fetch("/api/state", { cache: "no-store", signal: ctrl.signal });
+      clearTimeout(timer);
       if (res.ok) {
         const data = await res.json();
         if (data.tokens?.length) {
@@ -239,8 +244,8 @@ export const useRebateStore = create<RebateState>((set, get) => ({
           });
         }
       }
-    } catch (e) {
-      console.error("Error fetching state:", e);
+    } catch {
+      // silently fall back to seed data already in the store
     } finally {
       set({ isLoadingData: false });
     }

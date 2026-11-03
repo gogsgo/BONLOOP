@@ -94,13 +94,13 @@ export function RewardsView() {
           >
             Rewards
           </h1>
-          <p className="text-sm text-[#948FA8] mt-1.5">
+          <p className="text-sm text-[#777] mt-1.5">
             What the pad has paid out so far, and what any wallet has received
             to date. Updates every 30 seconds.
           </p>
         </div>
 
-        <div className="text-xs font-mono text-[#645E78]">
+        <div className="text-xs font-mono text-[#555]">
           Indexed to block {indexedBlock.toLocaleString()}
         </div>
       </div>
@@ -109,7 +109,7 @@ export function RewardsView() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-7">
         {/* Card 1: BONUS TOKENS CREDITED */}
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#7E7896]">
+          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#555]">
             BONUS TOKENS CREDITED
           </div>
           <div className="font-mono text-3xl sm:text-4xl font-bold text-white mt-3">
@@ -119,7 +119,7 @@ export function RewardsView() {
               maximumFractionDigits: 2,
             })}
           </div>
-          <p className="text-xs text-[#948FA8] mt-3 leading-relaxed">
+          <p className="text-xs text-[#777] mt-3 leading-relaxed">
             {bonusTokensCreditedCountM.toFixed(2)}M tokens across{" "}
             {totalBuysCount.toLocaleString()} buys at today&apos;s prices,
             $32,334.64 when paid
@@ -128,7 +128,7 @@ export function RewardsView() {
 
         {/* Card 2: HOLDER PAYOUTS */}
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#7E7896]">
+          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#555]">
             HOLDER PAYOUTS
           </div>
           <div className="font-mono text-3xl sm:text-4xl font-bold text-white mt-3">
@@ -138,7 +138,7 @@ export function RewardsView() {
               maximumFractionDigits: 2,
             })}
           </div>
-          <p className="text-xs text-[#948FA8] mt-3 leading-relaxed">
+          <p className="text-xs text-[#777] mt-3 leading-relaxed">
             {payoutRounds} payout rounds, {payoutPayments.toLocaleString()}{" "}
             payments, in each token&apos;s pair asset
           </p>
@@ -146,23 +146,23 @@ export function RewardsView() {
 
         {/* Card 3: $REBATE BURNED */}
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#7E7896]">
+          <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#555]">
             $REBATE BURNED
           </div>
-          <div className="font-mono text-3xl sm:text-4xl font-bold text-[#C084FC] mt-3">
+          <div className="font-mono text-3xl sm:text-4xl font-bold text-white mt-3">
             {rebateBurnedM.toFixed(2)}M
           </div>
-          <p className="text-xs text-[#948FA8] mt-3 leading-relaxed">
+          <p className="text-xs text-[#777] mt-3 leading-relaxed">
             0.469% of the 1B launch supply, $4,254.39 at today&apos;s price
           </p>
         </div>
       </div>
 
       {/* YOUR ACCUMULATED HOLDER DIVIDENDS & OPTIMISTIC CLAIM PANEL */}
-      <div className="rounded-2xl border border-[#8B5CF6]/35 bg-[#131020] p-6 sm:p-7 mb-7">
+      <div className="rounded-2xl border border-white/30/35 bg-[#131020] p-6 sm:p-7 mb-7">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-6 border-b border-white/[0.07]">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/40 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-[#D8B4FE] mb-2.5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 border border-white/30/40 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-[#D8B4FE] mb-2.5">
               <Coins className="w-3.5 h-3.5" />
               <span>HOLDER DIVIDEND CLAIM DASHBOARD (ETH / USDG)</span>
             </div>
@@ -172,7 +172,7 @@ export function RewardsView() {
                 ${totalUnclaimedUsd.toFixed(2)}
               </span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#948FA8] mt-1">
+            <p className="text-xs sm:text-sm text-[#777] mt-1">
               {totalUnclaimedEth.toFixed(4)} ETH + $
               {totalUnclaimedUsdg.toFixed(2)} USDG earned across your held
               tokens ({walletAddress}).
@@ -185,14 +185,14 @@ export function RewardsView() {
                 onClick={() => connectWallet("Robinhood Wallet")}
                 className="h-11 px-5 rounded-xl border border-white/[0.12] bg-[#1C172E] hover:bg-[#251E3D] text-xs font-bold text-white flex items-center gap-2 cursor-pointer"
               >
-                <Wallet className="w-4 h-4 text-[#C084FC]" />
+                <Wallet className="w-4 h-4 text-white" />
                 <span>Connect Wallet</span>
               </button>
             )}
             <button
               onClick={() => handleClaim()}
               disabled={isClaiming || totalUnclaimedUsd <= 0}
-              className="h-11 px-6 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] disabled:opacity-40 text-xs sm:text-sm font-bold text-white flex items-center gap-2 shadow-[0_0_25px_rgba(139,92,246,0.4)] transition-all cursor-pointer"
+              className="h-11 px-6 rounded-xl bg-white hover:bg-white/80 disabled:opacity-40 text-xs sm:text-sm font-bold text-white flex items-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all cursor-pointer"
             >
               {isClaiming ? (
                 <>
@@ -235,21 +235,21 @@ export function RewardsView() {
                       <div className="text-xs font-bold text-white">
                         {h.tokenName}
                       </div>
-                      <div className="text-[10px] font-mono text-[#7E7896]">
+                      <div className="text-[10px] font-mono text-[#555]">
                         ${h.tokenTicker} · {h.holdMultiplier}x Tier
                       </div>
                     </div>
                   </div>
                   <button
                     onClick={() => openTokenSwap(h.tokenSlug)}
-                    className="text-[#7E7896] hover:text-white"
+                    className="text-[#555] hover:text-white"
                     title="Open token pool"
                   >
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
 
-                <div className="text-[10px] font-mono uppercase text-[#645E78]">
+                <div className="text-[10px] font-mono uppercase text-[#555]">
                   UNCLAIMED {h.pairAsset} DIVIDEND
                 </div>
                 <div className="font-mono text-base font-bold text-[#22C55E] mt-0.5">
@@ -257,19 +257,19 @@ export function RewardsView() {
                     ? `${h.unclaimedEth.toFixed(4)} ETH`
                     : `${h.unclaimedUsdg.toFixed(2)} USDG`}
                 </div>
-                <div className="text-[11px] font-mono text-[#948FA8]">
+                <div className="text-[11px] font-mono text-[#777]">
                   ≈ ${h.unclaimedUsd.toFixed(2)} USD
                 </div>
               </div>
 
               <div className="mt-3 pt-2.5 border-t border-white/[0.05] flex items-center justify-between text-[11px] font-mono">
-                <span className="text-[#645E78]">
+                <span className="text-[#555]">
                   Paid: ${h.claimedTotalUsd.toFixed(0)}
                 </span>
                 {h.unclaimedUsd > 0 ? (
                   <button
                     onClick={() => handleClaim(h.tokenSlug)}
-                    className="text-[#C084FC] hover:underline font-bold cursor-pointer"
+                    className="text-white hover:underline font-bold cursor-pointer"
                   >
                     Claim →
                   </button>
@@ -287,7 +287,7 @@ export function RewardsView() {
         <h2 className="text-lg sm:text-xl font-bold text-white">
           Check a wallet
         </h2>
-        <p className="text-xs sm:text-sm text-[#948FA8] mt-1">
+        <p className="text-xs sm:text-sm text-[#777] mt-1">
           Bonus tokens and holder payouts this wallet has received, per token,
           since the pad opened.
         </p>
@@ -301,11 +301,11 @@ export function RewardsView() {
             value={lookupInput}
             onChange={(e) => setLookupInput(e.target.value)}
             placeholder="0x..."
-            className="flex-1 h-12 px-4 rounded-xl border border-white/[0.08] bg-[#09080E] font-mono text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+            className="flex-1 h-12 px-4 rounded-xl border border-white/[0.08] bg-[#080808] font-mono text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
           />
           <button
             type="submit"
-            className="h-12 px-6 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-sm font-semibold text-white flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+            className="h-12 px-6 rounded-xl bg-white hover:bg-white/80 text-sm font-semibold text-white flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
           >
             <Search className="w-4 h-4" />
             <span>Look up</span>
@@ -313,7 +313,7 @@ export function RewardsView() {
         </form>
 
         {/* Quick sample wallets */}
-        <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] font-mono text-[#645E78]">
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] font-mono text-[#555]">
           <span>Try wallet:</span>
           {[DEFAULT_DEMO_WALLET, "0x569d...289e", "0x385a...238f"].map((w) => (
             <button
@@ -323,7 +323,7 @@ export function RewardsView() {
                 setLookupInput(w);
                 setLookedUpWallet(w);
               }}
-              className="px-2 py-0.5 rounded bg-white/[0.04] hover:bg-[#8B5CF6]/20 text-[#948FA8] hover:text-[#D8B4FE] transition-colors cursor-pointer"
+              className="px-2 py-0.5 rounded bg-white/[0.04] hover:bg-white/20 text-[#777] hover:text-[#D8B4FE] transition-colors cursor-pointer"
             >
               {w}
             </button>
@@ -336,17 +336,17 @@ export function RewardsView() {
             <div className="flex items-center justify-between mb-3">
               <div className="text-xs font-mono text-white">
                 Indexing history for{" "}
-                <strong className="text-[#C084FC]">{lookedUpWallet}</strong>
+                <strong className="text-white">{lookedUpWallet}</strong>
               </div>
               <span className="text-[11px] font-mono text-[#22C55E]">
                 4 Pools Found on Robinhood Chain
               </span>
             </div>
 
-            <div className="rounded-xl border border-white/[0.06] bg-[#09080E] overflow-x-auto">
+            <div className="rounded-xl border border-white/[0.06] bg-[#080808] overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs font-mono">
                 <thead>
-                  <tr className="border-b border-white/[0.06] text-[10px] uppercase text-[#645E78]">
+                  <tr className="border-b border-white/[0.06] text-[10px] uppercase text-[#555]">
                     <th className="py-3 px-4">TOKEN</th>
                     <th className="py-3 px-4">BONUS TOKENS RECEIVED</th>
                     <th className="py-3 px-4">BONUS VALUE TODAY</th>
@@ -358,11 +358,11 @@ export function RewardsView() {
                     <tr key={h.tokenSlug}>
                       <td className="py-3 px-4 font-sans font-bold text-white">
                         {h.tokenName}{" "}
-                        <span className="font-mono text-[#7E7896]">
+                        <span className="font-mono text-[#555]">
                           ${h.tokenTicker}
                         </span>
                       </td>
-                      <td className="py-3 px-4 text-[#C084FC] font-bold">
+                      <td className="py-3 px-4 text-white font-bold">
                         +{h.bonusReceived.toLocaleString()} ${h.tokenTicker}
                       </td>
                       <td className="py-3 px-4 text-white">
@@ -382,8 +382,8 @@ export function RewardsView() {
       </div>
 
       {/* Footnote matching Reference Image 1 */}
-      <div className="mt-5 flex items-center gap-2.5 text-xs text-[#7E7896]">
-        <Gift className="w-4 h-4 text-[#7E7896] shrink-0" />
+      <div className="mt-5 flex items-center gap-2.5 text-xs text-[#555]">
+        <Gift className="w-4 h-4 text-[#555] shrink-0" />
         <span>
           Bonus tokens are valued at today&apos;s prices, holder payouts at the
           pair-asset price when the round was published. Payouts to a

@@ -60,7 +60,7 @@ export async function POST(request: Request) {
         ticker: cleanTicker,
         description:
           String(description || "").trim() ||
-          `${name} ($${cleanTicker}) launched on Rebate Pad on Robinhood Chain with +${bonusRate}% instant buyer bonus and ${payoutRate}% ${pairAsset} payouts.`,
+          `${name} ($${cleanTicker}) launched on BONLOOP on Robinhood Chain with +${bonusRate}% instant buyer bonus and ${payoutRate}% ${pairAsset} payouts.`,
         logoUrl: logoUrl || TOKEN_ARTWORKS.rebate,
         creatorAddress,
         contractAddress,

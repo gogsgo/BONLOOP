@@ -1,93 +1,163 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #09080e;
-  --bg-elevated: #12101b;
-  --bg-card-hover: #181524;
-  --accent-purple: #8b5cf6;
-  --accent-violet: #a855f7;
-  --border-subtle: rgba(255, 255, 255, 0.07);
+  --bg: #080808;
+  --bg-1: #0f0f0f;
+  --bg-2: #141414;
+  --accent: #c5f135;
+  --accent-dim: rgba(197, 241, 53, 0.12);
+  --border: rgba(255,255,255,0.07);
+  --text: #e8e8e8;
+  --muted: #888;
+  --dim: #444;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+/* hide system cursor */
+html { cursor: none; }
+a, button, input, select, textarea, label, [role="button"] { cursor: none; }
 
 body {
-  background-color: #09080e;
-  color: #f8fafc;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* Micro-dot matrix background matching Rebate Pad reference */
-.bg-dot-matrix {
-  background-color: #09080e;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-  background-size: 20px 20px;
+/* ─── Custom cursor ──────────────────────────────── */
+#bl-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 7px; height: 7px;
+  background: #c5f135;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%,-50%);
+  transition: width .12s, height .12s, opacity .12s;
+  will-change: transform;
+}
+#bl-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 30px; height: 30px;
+  border: 1px solid rgba(197,241,53,.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%,-50%);
+  transition: width .2s, height .2s, border-color .2s;
+  will-change: transform;
+}
+#bl-dot.hovered  { width: 12px; height: 12px; }
+#bl-ring.hovered { width: 48px; height: 48px; border-color: rgba(197,241,53,.7); }
+#bl-dot.clicked  { width: 4px; height: 4px; }
+
+/* ─── Typography ─────────────────────────────────── */
+.font-mono { font-family: var(--font-mono), 'JetBrains Mono', monospace; }
+
+/* Lime text-stroke (display accent word) */
+.text-stroke-lime {
+  color: rgba(197,241,53,.1);
+  -webkit-text-stroke: 1.5px #c5f135;
 }
 
-/* Outlined violet hatched display word ("zero.", "Hold it. Get paid.") */
-.text-stroke-violet {
-  color: rgba(168, 85, 247, 0.18);
-  -webkit-text-stroke: 1.5px #a855f7;
-  text-shadow: 0 0 28px rgba(168, 85, 247, 0.25);
+/* ─── Animations ─────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse-lime {
+  0%,100% { box-shadow: 0 0 0 0 rgba(197,241,53,.3); }
+  50%     { box-shadow: 0 0 0 6px rgba(197,241,53,0); }
 }
 
-/* Jagged receipt bottom border for Buy Preview card */
-.receipt-edge {
-  position: relative;
-}
-.receipt-edge::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 8px;
-  background-image: radial-gradient(circle at 8px 8px, #09080e 6px, transparent 6.5px);
-  background-size: 16px 8px;
+.animate-slide-up      { animation: slideUp 0.6s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-in       { animation: fadeIn  0.7s ease both; }
+.delay-1               { animation-delay: .1s; }
+.delay-2               { animation-delay: .2s; }
+.delay-3               { animation-delay: .3s; }
+.delay-4               { animation-delay: .4s; }
+.delay-5               { animation-delay: .5s; }
+.delay-6               { animation-delay: .6s; }
+.delay-7               { animation-delay: .7s; }
+.live-dot              { animation: pulse-lime 2s ease-in-out infinite; }
+.ticker-wrap           { overflow: hidden; }
+.ticker-inner          { display: flex; animation: ticker 28s linear infinite; }
+.ticker-inner:hover    { animation-play-state: paused; }
+
+/* ─── Lime text-stroke (display word) ───────────── */
+.text-stroke-lime {
+  color: rgba(255,255,255,0.08);
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.7);
 }
 
-/* Custom range slider for Bonus Rate & Economics */
+/* ─── Slider (white thumb) ───────────────────────── */
+input[type="range"].bl-slider,
 input[type="range"].rebate-slider {
   -webkit-appearance: none;
   appearance: none;
-  height: 6px;
+  height: 4px;
   border-radius: 999px;
-  background: #231e36;
+  background: #1e1e1e;
   outline: none;
 }
-
+input[type="range"].bl-slider::-webkit-slider-thumb,
 input[type="range"].rebate-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 14px; height: 14px;
   border-radius: 50%;
-  background: #a855f7;
-  border: 2px solid #f3e8ff;
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
-  cursor: pointer;
-  transition: transform 0.15s ease;
+  background: #ffffff;
+  border: 2px solid #080808;
+  cursor: none;
+  transition: transform .15s;
+}
+input[type="range"].bl-slider::-webkit-slider-thumb:hover,
+input[type="range"].rebate-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+/* ─── Live dot (white pulse) ─────────────────────── */
+@keyframes pulse-white {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,.25); }
+  50%     { box-shadow: 0 0 0 6px rgba(255,255,255,0); }
+}
+.live-dot { animation: pulse-white 2s ease-in-out infinite; }
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
+
+/* ─── Selection ──────────────────────────────────── */
+::selection { background: rgba(197,241,53,.18); color: #fff; }
+
+/* ─── Receipt edge ───────────────────────────────── */
+.receipt-edge { position: relative; }
+.receipt-edge::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 8px;
+  background-image: radial-gradient(circle at 8px 8px, var(--bg) 6px, transparent 6.5px);
+  background-size: 16px 8px;
 }
 
-input[type="range"].rebate-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.18);
-}
+/* ─── Section border ─────────────────────────────── */
+.bl-section { border-top: 1px solid var(--border); }
 
-/* Custom sleek dark scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #09080e;
-}
-::-webkit-scrollbar-thumb {
-  background: #231f33;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3b3354;
+/* ─── Landing hero line ──────────────────────────── */
+.hero-line {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 800;
+  line-height: .92;
+  letter-spacing: -.03em;
 }

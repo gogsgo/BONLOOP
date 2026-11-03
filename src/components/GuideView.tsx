@@ -29,17 +29,17 @@ export function GuideView() {
           >
             Buy it. Get more.
             <br />
-            <span className="text-stroke-violet">Hold it. Get paid.</span>
+            <span className="text-stroke-lime">Hold it. Get paid.</span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base text-[#948FA8] leading-relaxed">
-            On Rebate Pad, buying a token gives you bonus tokens on top of the
+          <p className="mt-5 text-sm sm:text-base text-[#777] leading-relaxed">
+            On BONLOOP, buying a token gives you bonus tokens on top of the
             base swap, at a rate each launch sets. Holding it pays you a share
             of every trade in the token&apos;s pair asset, several times a day,
             straight to your wallet. Nothing to stake, nothing to claim.
           </p>
         </div>
 
-        <div className="w-36 h-36 sm:w-44 sm:h-44 shrink-0 drop-shadow-[0_14px_34px_rgba(168,85,247,0.45)]">
+        <div className="w-36 h-36 sm:w-44 sm:h-44 shrink-0 drop-shadow-[0_14px_34px_rgba(255,255,255,0.45)]">
           <img
             src={TOKEN_ARTWORKS.ruby}
             alt="Ruby mascot"
@@ -51,48 +51,48 @@ export function GuideView() {
       {/* 4-STEP INFOGRAPHIC UI (Required by PRD & Reference Image 5) */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
-          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-[#8B5CF6]/30 flex items-center justify-center text-[#C084FC] mb-5">
+          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-white/30/30 flex items-center justify-center text-white mb-5">
             <Compass className="w-5 h-5" />
           </div>
-          <div className="text-[10px] font-mono text-[#645E78] mb-1">STEP 01</div>
+          <div className="text-[10px] font-mono text-[#555] mb-1">STEP 01</div>
           <h3 className="text-base font-bold text-white">Choose a token</h3>
-          <p className="text-xs text-[#948FA8] mt-2 leading-relaxed">
+          <p className="text-xs text-[#777] mt-2 leading-relaxed">
             Browse launches, compare bonus and payout rates, open the one you
             like.
           </p>
         </div>
 
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
-          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-[#8B5CF6]/30 flex items-center justify-center text-[#C084FC] mb-5">
+          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-white/30/30 flex items-center justify-center text-white mb-5">
             <Calculator className="w-5 h-5" />
           </div>
-          <div className="text-[10px] font-mono text-[#645E78] mb-1">STEP 02</div>
+          <div className="text-[10px] font-mono text-[#555] mb-1">STEP 02</div>
           <h3 className="text-base font-bold text-white">Preview your bonus</h3>
-          <p className="text-xs text-[#948FA8] mt-2 leading-relaxed">
+          <p className="text-xs text-[#777] mt-2 leading-relaxed">
             See base tokens, bonus tokens and the total before you buy.
           </p>
         </div>
 
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
-          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-[#8B5CF6]/30 flex items-center justify-center text-[#C084FC] mb-5">
+          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-white/30/30 flex items-center justify-center text-white mb-5">
             <Gift className="w-5 h-5" />
           </div>
-          <div className="text-[10px] font-mono text-[#645E78] mb-1">STEP 03</div>
+          <div className="text-[10px] font-mono text-[#555] mb-1">STEP 03</div>
           <h3 className="text-base font-bold text-white">
             Buy and receive more
           </h3>
-          <p className="text-xs text-[#948FA8] mt-2 leading-relaxed">
+          <p className="text-xs text-[#777] mt-2 leading-relaxed">
             The bonus tokens arrive together with your base swap output.
           </p>
         </div>
 
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
-          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-[#8B5CF6]/30 flex items-center justify-center text-[#C084FC] mb-5">
+          <div className="w-10 h-10 rounded-xl bg-[#1F1835] border border-white/30/30 flex items-center justify-center text-white mb-5">
             <Coins className="w-5 h-5" />
           </div>
-          <div className="text-[10px] font-mono text-[#645E78] mb-1">STEP 04</div>
+          <div className="text-[10px] font-mono text-[#555] mb-1">STEP 04</div>
           <h3 className="text-base font-bold text-white">Hold and get paid</h3>
-          <p className="text-xs text-[#948FA8] mt-2 leading-relaxed">
+          <p className="text-xs text-[#777] mt-2 leading-relaxed">
             Holder payouts land in your wallet in the pair asset, several times
             a day. The longer you hold, the bigger your share.
           </p>
@@ -105,7 +105,7 @@ export function GuideView() {
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             Try the numbers
           </h2>
-          <p className="text-xs sm:text-sm text-[#948FA8] mt-1">
+          <p className="text-xs sm:text-sm text-[#777] mt-1">
             Change the base output and the rate. The preview recalculates
             immediately.
           </p>
@@ -120,7 +120,7 @@ export function GuideView() {
             <h2 className="text-xl sm:text-2xl font-bold text-white">
               Holder payouts
             </h2>
-            <p className="text-xs sm:text-sm text-[#948FA8] mt-1">
+            <p className="text-xs sm:text-sm text-[#777] mt-1">
               Hold a token that pays holders and a share of every trade is
               yours. Two things decide the size of that share.
             </p>
@@ -134,7 +134,7 @@ export function GuideView() {
               <h3 className="text-base font-bold text-white mb-4">
                 Your share
               </h3>
-              <ul className="space-y-3 text-xs sm:text-sm text-[#948FA8]">
+              <ul className="space-y-3 text-xs sm:text-sm text-[#777]">
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
                   <span>
@@ -172,24 +172,24 @@ export function GuideView() {
               <div className="grid grid-cols-3 rounded-xl border border-white/[0.08] bg-[#0B0912] divide-x divide-white/[0.06] font-mono">
                 <div className="p-3.5">
                   <div className="text-lg font-bold text-white">1×</div>
-                  <div className="text-[11px] text-[#7E7896] mt-0.5">
+                  <div className="text-[11px] text-[#555] mt-0.5">
                     0–3 days
                   </div>
                 </div>
                 <div className="p-3.5">
                   <div className="text-lg font-bold text-white">1.5×</div>
-                  <div className="text-[11px] text-[#7E7896] mt-0.5">
+                  <div className="text-[11px] text-[#555] mt-0.5">
                     3–7 days
                   </div>
                 </div>
                 <div className="p-3.5">
-                  <div className="text-lg font-bold text-[#C084FC]">2×</div>
+                  <div className="text-lg font-bold text-white">2×</div>
                   <div className="text-[11px] text-[#D8B4FE] mt-0.5">
                     7+ days
                   </div>
                 </div>
               </div>
-              <p className="text-[11px] text-[#645E78] mt-2.5">
+              <p className="text-[11px] text-[#555] mt-2.5">
                 The tiers change how a payout is split, never its size. A payout
                 is exactly what the token&apos;s trading produced.
               </p>
@@ -202,7 +202,7 @@ export function GuideView() {
               <h3 className="text-base font-bold text-white mb-4">
                 What launchers choose
               </h3>
-              <ul className="space-y-3 text-xs sm:text-sm text-[#948FA8]">
+              <ul className="space-y-3 text-xs sm:text-sm text-[#777]">
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
                   <span>
@@ -237,18 +237,18 @@ export function GuideView() {
 
             <div className="mt-6 rounded-xl border border-white/[0.06] bg-[#0B0912] p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Lock className="w-5 h-5 text-[#A855F7]" />
+                <Lock className="w-5 h-5 text-white" />
                 <div>
                   <div className="text-xs font-bold text-white">
                     7%+ Locked Bonus Treasury
                   </div>
-                  <div className="text-[11px] text-[#7E7896]">
+                  <div className="text-[11px] text-[#555]">
                     Sell fees refill it, bonus tokens to buyers are the only way
                     out.
                   </div>
                 </div>
               </div>
-              <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded border border-[#A855F7]/40 text-[#C084FC]">
+              <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded border border-white/30/40 text-white">
                 IMMUTABLE
               </span>
             </div>
@@ -257,16 +257,16 @@ export function GuideView() {
 
         {/* ONE PAYOUT ROUND VISUAL DIAGRAM (Matching Reference Image 2) */}
         <div className="mt-6 rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
-          <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.14em] text-[#7E7896] mb-5">
+          <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.14em] text-[#555] mb-5">
             <span>ONE PAYOUT ROUND ILLUSTRATION</span>
             <span>SHARE = TOKENS HELD × HOLD TIER</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 rounded-2xl border border-[#8B5CF6]/40 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.22),transparent_70%)]">
-              <div className="w-28 h-28 rounded-full border-2 border-[#A855F7]/60 bg-[#1B1433] flex flex-col items-center justify-center text-center shadow-[0_0_35px_rgba(168,85,247,0.35)]">
+            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 rounded-2xl border border-white/30/40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22),transparent_70%)]">
+              <div className="w-28 h-28 rounded-full border-2 border-white/30/60 bg-[#1B1433] flex flex-col items-center justify-center text-center shadow-[0_0_35px_rgba(255,255,255,0.35)]">
                 <span className="text-sm font-bold text-white">Trading pot</span>
-                <span className="text-[10px] font-mono text-[#C084FC] mt-0.5">
+                <span className="text-[10px] font-mono text-white mt-0.5">
                   Pair token (ETH/USDG)
                 </span>
               </div>
@@ -311,17 +311,17 @@ export function GuideView() {
                     <span className="font-sans font-bold text-white">
                       {w.wallet}
                     </span>
-                    <span className="rounded bg-[#8B5CF6]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#D8B4FE]">
+                    <span className="rounded bg-white/20 px-1.5 py-0.5 text-[10px] font-bold text-[#D8B4FE]">
                       {w.tier}
                     </span>
                   </div>
                   <div className="h-2 w-full rounded-full bg-[#191528] overflow-hidden mb-2">
                     <div
-                      className="h-full bg-[#A855F7] rounded-full"
+                      className="h-full bg-white rounded-full"
                       style={{ width: w.barW }}
                     />
                   </div>
-                  <div className="flex items-center justify-between text-[11px] text-[#7E7896]">
+                  <div className="flex items-center justify-between text-[11px] text-[#555]">
                     <span>{w.held}</span>
                     <span className="text-white font-bold">{w.share} of pot</span>
                   </div>
@@ -329,7 +329,7 @@ export function GuideView() {
               ))}
             </div>
           </div>
-          <p className="text-[11px] text-[#645E78] mt-4">
+          <p className="text-[11px] text-[#555] mt-4">
             Illustrative. Wallet B holds the most tokens (60M) but has held them
             one day, so Wallet A, holding 40M for nine days (2× tier), takes the
             bigger share.
@@ -341,7 +341,7 @@ export function GuideView() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-base font-bold text-white mb-4">What it is</h3>
-          <ul className="space-y-3 text-xs sm:text-sm text-[#948FA8]">
+          <ul className="space-y-3 text-xs sm:text-sm text-[#777]">
             <li className="flex items-start gap-2.5">
               <Check className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
               <span>
@@ -371,7 +371,7 @@ export function GuideView() {
           <h3 className="text-base font-bold text-white mb-4">
             What it is not
           </h3>
-          <ul className="space-y-3 text-xs sm:text-sm text-[#948FA8]">
+          <ul className="space-y-3 text-xs sm:text-sm text-[#777]">
             <li className="flex items-start gap-2.5">
               <X className="w-4 h-4 text-[#EF4444] shrink-0 mt-0.5" />
               <span>
@@ -391,20 +391,20 @@ export function GuideView() {
       <section className="space-y-6">
         <div className="rounded-2xl border border-white/[0.08] bg-[#12101B] p-6">
           <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
-            <Shield className="w-4 h-4 text-[#A855F7]" />
+            <Shield className="w-4 h-4 text-white" />
             <span>Notes</span>
           </h3>
-          <ol className="list-decimal list-inside space-y-2 text-xs text-[#948FA8] leading-relaxed">
+          <ol className="list-decimal list-inside space-y-2 text-xs text-[#777] leading-relaxed">
             <li>
               Tokens, prices, balances, payouts and activity are read from
-              Robinhood Chain through the Rebate Pad indexer.
+              Robinhood Chain through the BONLOOP indexer.
             </li>
             <li>
-              Trades and launches are signed in your own wallet. Rebate Pad
+              Trades and launches are signed in your own wallet. BONLOOP
               never holds your keys or funds.
             </li>
             <li>
-              Rebate Pad runs on Robinhood Chain as an independent project. No
+              BONLOOP runs on Robinhood Chain as an independent project. No
               partnership or endorsement is implied.
             </li>
             <li>
@@ -417,7 +417,7 @@ export function GuideView() {
         <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={() => setActiveTab("discover")}
-            className="h-11 px-6 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-xs sm:text-sm font-semibold text-white shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all cursor-pointer"
+            className="h-11 px-6 rounded-xl bg-white hover:bg-white/80 text-xs sm:text-sm font-semibold text-white shadow-[0_0_25px_rgba(255,255,255,0.35)] transition-all cursor-pointer"
           >
             Explore tokens
           </button>

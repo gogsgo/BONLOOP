@@ -60,7 +60,7 @@ export function LaunchTokenView() {
   const [isDeploying, setIsDeploying] = useState<boolean>(false);
   const [deployStage, setDeployStage] = useState<string>("");
 
-  // Enforce Bonus + Payout <= 9% rule from Rebate Pad spec
+  // Enforce Bonus + Payout <= 9% rule from BONLOOP spec
   const handleBonusChange = (val: number) => {
     setBonusRate(val);
     if (val + payoutRate > 9) {
@@ -115,7 +115,7 @@ export function LaunchTokenView() {
       ticker: finalTicker,
       description:
         description.trim() ||
-        `${finalName} ($${finalTicker}) launched on Rebate Pad with +${bonusRate}% instant purchase bonus and ${payoutRate}% ${pairAsset} holder dividends.`,
+        `${finalName} ($${finalTicker}) launched on BONLOOP with +${bonusRate}% instant purchase bonus and ${payoutRate}% ${pairAsset} holder dividends.`,
       logoUrl,
       pairAsset,
       bonusRate,
@@ -154,7 +154,7 @@ export function LaunchTokenView() {
         >
           Launch a token
         </h1>
-        <p className="text-sm text-[#948FA8] mt-1.5">
+        <p className="text-sm text-[#777] mt-1.5">
           Four short steps. The last one deploys your token and its pool on
           Robinhood Chain from your wallet.
         </p>
@@ -170,8 +170,8 @@ export function LaunchTokenView() {
                 onClick={() => setStep(s.id)}
                 className={`px-4 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                   isCurrent
-                    ? "border-[#8B5CF6] bg-[#21183C] text-[#D8B4FE] shadow-[0_0_16px_rgba(139,92,246,0.25)]"
-                    : "border-white/[0.08] bg-[#12101B] text-[#7E7896] hover:text-white"
+                    ? "border-white/30 bg-[#21183C] text-[#D8B4FE] shadow-[0_0_16px_rgba(255,255,255,0.25)]"
+                    : "border-white/[0.08] bg-[#12101B] text-[#555] hover:text-white"
                 }`}
               >
                 {s.label}
@@ -201,9 +201,9 @@ export function LaunchTokenView() {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Pixel Otter..."
                     maxLength={32}
-                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
                   />
-                  <div className="text-[11px] text-[#645E78] mt-1.5">
+                  <div className="text-[11px] text-[#555] mt-1.5">
                     2 to 32 characters
                   </div>
                 </div>
@@ -218,9 +218,9 @@ export function LaunchTokenView() {
                     onChange={(e) => setTicker(e.target.value.toUpperCase())}
                     placeholder="POTR..."
                     maxLength={6}
-                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] font-mono text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] font-mono text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
                   />
-                  <div className="text-[11px] text-[#645E78] mt-1.5">
+                  <div className="text-[11px] text-[#555] mt-1.5">
                     2 to 6 characters
                   </div>
                 </div>
@@ -236,17 +236,17 @@ export function LaunchTokenView() {
                     type="text"
                     value={totalSupply}
                     onChange={(e) => setTotalSupply(e.target.value)}
-                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] font-mono text-sm text-white focus:outline-none focus:border-[#8B5CF6]"
+                    className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] font-mono text-sm text-white focus:outline-none focus:border-white/30"
                   />
                   <button
                     type="button"
                     onClick={() => setTotalSupply("1,000,000,000")}
-                    className="shrink-0 h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#191528] text-xs font-mono text-[#C084FC] hover:bg-[#231D38]"
+                    className="shrink-0 h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#191528] text-xs font-mono text-white hover:bg-[#231D38]"
                   >
                     1B Standard
                   </button>
                 </div>
-                <div className="text-[11px] text-[#645E78] mt-1.5">
+                <div className="text-[11px] text-[#555] mt-1.5">
                   Fixed supply minted at deployment. Nothing can be minted later.
                 </div>
               </div>
@@ -262,9 +262,9 @@ export function LaunchTokenView() {
                   onChange={(e) => setDescription(e.target.value)}
                   maxLength={280}
                   placeholder="What is this token for? Who is it for?..."
-                  className="w-full p-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6] resize-none"
+                  className="w-full p-3.5 rounded-xl border border-white/[0.08] bg-[#080808] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30 resize-none"
                 />
-                <div className="text-[11px] font-mono text-[#645E78] mt-1">
+                <div className="text-[11px] font-mono text-[#555] mt-1">
                   {description.length}/280
                 </div>
               </div>
@@ -275,7 +275,7 @@ export function LaunchTokenView() {
                   Artwork
                 </label>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <div className="w-20 h-20 rounded-xl border border-white/[0.1] bg-[#09080E] overflow-hidden flex items-center justify-center shrink-0">
+                  <div className="w-20 h-20 rounded-xl border border-white/[0.1] bg-[#080808] overflow-hidden flex items-center justify-center shrink-0">
                     {logoUrl ? (
                       <img
                         src={logoUrl}
@@ -283,7 +283,7 @@ export function LaunchTokenView() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <ImageIcon className="w-6 h-6 text-[#645E78]" />
+                      <ImageIcon className="w-6 h-6 text-[#555]" />
                     )}
                   </div>
 
@@ -298,13 +298,13 @@ export function LaunchTokenView() {
                           className="hidden"
                         />
                       </label>
-                      <span className="text-xs text-[#645E78] truncate max-w-[180px]">
+                      <span className="text-xs text-[#555] truncate max-w-[180px]">
                         {fileName}
                       </span>
                     </div>
 
                     <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
-                      <span className="text-[11px] text-[#A855F7] mr-1">
+                      <span className="text-[11px] text-white mr-1">
                         Or pick a placeholder:
                       </span>
                       {PRESET_LOGOS.map((preset) => (
@@ -317,15 +317,15 @@ export function LaunchTokenView() {
                           }}
                           className={`px-2 py-0.5 rounded text-[10px] font-mono border transition-colors cursor-pointer ${
                             logoUrl === preset.url
-                              ? "border-[#A855F7] bg-[#8B5CF6]/20 text-white"
-                              : "border-white/[0.07] bg-[#09080E] text-[#948FA8] hover:text-white"
+                              ? "border-white/30 bg-white/20 text-white"
+                              : "border-white/[0.07] bg-[#080808] text-[#777] hover:text-white"
                           }`}
                         >
                           {preset.label}
                         </button>
                       ))}
                     </div>
-                    <p className="text-[11px] text-[#645E78] mt-2">
+                    <p className="text-[11px] text-[#555] mt-2">
                       Square image, PNG, JPEG, WebP or GIF, under 2 MB
                     </p>
                   </div>
@@ -337,14 +337,14 @@ export function LaunchTokenView() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("discover")}
-                  className="text-xs font-medium text-[#7E7896] hover:text-white cursor-pointer"
+                  className="text-xs font-medium text-[#555] hover:text-white cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={() => setStep("links")}
-                  className="h-10 px-5 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
+                  className="h-10 px-5 rounded-xl bg-white hover:bg-white/80 text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
                 >
                   <span>Continue</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -364,7 +364,7 @@ export function LaunchTokenView() {
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder="https://..."
-                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
                 />
               </div>
 
@@ -377,7 +377,7 @@ export function LaunchTokenView() {
                   value={twitterUrl}
                   onChange={(e) => setTwitterUrl(e.target.value)}
                   placeholder="https://x.com/..."
-                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
                 />
               </div>
 
@@ -390,19 +390,19 @@ export function LaunchTokenView() {
                   value={telegramUrl}
                   onChange={(e) => setTelegramUrl(e.target.value)}
                   placeholder="https://t.me/..."
-                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#09080E] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-[#8B5CF6]"
+                  className="w-full h-11 px-3.5 rounded-xl border border-white/[0.08] bg-[#080808] text-sm text-white placeholder-[#645E78] focus:outline-none focus:border-white/30"
                 />
               </div>
 
               {/* Snipe Protection Toggle */}
-              <div className="rounded-xl border border-white/[0.08] bg-[#09080E] p-4 flex items-start justify-between gap-4">
+              <div className="rounded-xl border border-white/[0.08] bg-[#080808] p-4 flex items-start justify-between gap-4">
                 <div className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-[#A855F7] shrink-0 mt-0.5" />
+                  <Shield className="w-5 h-5 text-white shrink-0 mt-0.5" />
                   <div>
                     <div className="text-xs font-bold text-white">
                       10-Second Anti-Snipe Protection
                     </div>
-                    <p className="text-[11px] text-[#7E7896] mt-1 leading-relaxed">
+                    <p className="text-[11px] text-[#555] mt-1 leading-relaxed">
                       Starts at 99% snipe tax on block 0 and halves every 2
                       seconds. Snipe fees go directly to the holder payout pot.
                     </p>
@@ -412,7 +412,7 @@ export function LaunchTokenView() {
                   type="checkbox"
                   checked={snipeProtection}
                   onChange={(e) => setSnipeProtection(e.target.checked)}
-                  className="w-4 h-4 accent-[#8B5CF6] mt-1 cursor-pointer"
+                  className="w-4 h-4 accent-[rgba(255,255,255,0.8)] mt-1 cursor-pointer"
                 />
               </div>
 
@@ -420,14 +420,14 @@ export function LaunchTokenView() {
                 <button
                   type="button"
                   onClick={() => setStep("details")}
-                  className="text-xs font-medium text-[#7E7896] hover:text-white cursor-pointer"
+                  className="text-xs font-medium text-[#555] hover:text-white cursor-pointer"
                 >
                   ← Back
                 </button>
                 <button
                   type="button"
                   onClick={() => setStep("economics")}
-                  className="h-10 px-5 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
+                  className="h-10 px-5 rounded-xl bg-white hover:bg-white/80 text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
                 >
                   <span>Continue to Economics</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -442,7 +442,7 @@ export function LaunchTokenView() {
                 <h3 className="text-base font-bold text-white">
                   Configure Rebate & Dividend Economics
                 </h3>
-                <p className="text-xs text-[#7E7896] mt-1">
+                <p className="text-xs text-[#555] mt-1">
                   Rates are written into the smart contract at launch and can
                   never be changed later.
                 </p>
@@ -461,14 +461,14 @@ export function LaunchTokenView() {
                       onClick={() => setPairAsset(asset)}
                       className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
                         pairAsset === asset
-                          ? "border-[#8B5CF6] bg-[#21183C] text-white"
-                          : "border-white/[0.08] bg-[#09080E] text-[#7E7896] hover:text-white"
+                          ? "border-white/30 bg-[#21183C] text-white"
+                          : "border-white/[0.08] bg-[#080808] text-[#555] hover:text-white"
                       }`}
                     >
                       <div className="font-mono text-sm font-bold text-white">
                         {asset}
                       </div>
-                      <div className="text-[11px] text-[#948FA8] mt-0.5">
+                      <div className="text-[11px] text-[#777] mt-0.5">
                         {asset === "ETH"
                           ? "Robinhood Chain Native ETH dividends"
                           : "USDG Stablecoin dollar dividends"}
@@ -479,12 +479,12 @@ export function LaunchTokenView() {
               </div>
 
               {/* Initial Bonus % Slider */}
-              <div className="rounded-xl border border-white/[0.07] bg-[#09080E] p-4">
+              <div className="rounded-xl border border-white/[0.07] bg-[#080808] p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold text-white">
                     Initial Bonus % (Buyer Instant Bonus)
                   </span>
-                  <span className="font-mono text-sm font-bold text-[#C084FC]">
+                  <span className="font-mono text-sm font-bold text-white">
                     +{bonusRate}%
                   </span>
                 </div>
@@ -495,9 +495,9 @@ export function LaunchTokenView() {
                   step={0.5}
                   value={bonusRate}
                   onChange={(e) => handleBonusChange(parseFloat(e.target.value))}
-                  className="rebate-slider w-full"
+                  className="bl-slider w-full"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-[#645E78] mt-1.5">
+                <div className="flex justify-between text-[10px] font-mono text-[#555] mt-1.5">
                   <span>2% Min</span>
                   <span>5% Recommended</span>
                   <span>9% Max</span>
@@ -505,7 +505,7 @@ export function LaunchTokenView() {
               </div>
 
               {/* Holder Payout Tax % Slider */}
-              <div className="rounded-xl border border-white/[0.07] bg-[#09080E] p-4">
+              <div className="rounded-xl border border-white/[0.07] bg-[#080808] p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold text-white">
                     Holder Payout Tax % ({pairAsset} Dividends)
@@ -521,9 +521,9 @@ export function LaunchTokenView() {
                   step={0.5}
                   value={payoutRate}
                   onChange={(e) => handlePayoutChange(parseFloat(e.target.value))}
-                  className="rebate-slider w-full"
+                  className="bl-slider w-full"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-[#645E78] mt-1.5">
+                <div className="flex justify-between text-[10px] font-mono text-[#555] mt-1.5">
                   <span>0% None</span>
                   <span>2% Standard</span>
                   <span>Bonus + Payout ≤ 9%</span>
@@ -534,14 +534,14 @@ export function LaunchTokenView() {
                 <button
                   type="button"
                   onClick={() => setStep("links")}
-                  className="text-xs font-medium text-[#7E7896] hover:text-white cursor-pointer"
+                  className="text-xs font-medium text-[#555] hover:text-white cursor-pointer"
                 >
                   ← Back
                 </button>
                 <button
                   type="button"
                   onClick={() => setStep("review")}
-                  className="h-10 px-5 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
+                  className="h-10 px-5 rounded-xl bg-white hover:bg-white/80 text-xs font-semibold text-white flex items-center gap-1.5 cursor-pointer"
                 >
                   <span>Review Launch</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -561,37 +561,37 @@ export function LaunchTokenView() {
                 <div>
                   <h3 className="text-lg font-bold text-white">
                     {name.trim() || "Pixel Otter"}{" "}
-                    <span className="font-mono text-sm text-[#C084FC]">
+                    <span className="font-mono text-sm text-white">
                       ${ticker.trim().toUpperCase() || "POTR"}
                     </span>
                   </h3>
-                  <p className="text-xs text-[#948FA8]">
+                  <p className="text-xs text-[#777]">
                     Supply: {totalSupply} · Pair: {pairAsset} · Robinhood Chain
                   </p>
                 </div>
               </div>
 
-              <div className="rounded-xl border border-white/[0.07] bg-[#09080E] p-4 space-y-2.5 text-xs font-mono">
+              <div className="rounded-xl border border-white/[0.07] bg-[#080808] p-4 space-y-2.5 text-xs font-mono">
                 <div className="flex justify-between">
-                  <span className="text-[#7E7896]">Instant Buyer Bonus:</span>
-                  <span className="text-[#C084FC] font-bold">+{bonusRate}%</span>
+                  <span className="text-[#555]">Instant Buyer Bonus:</span>
+                  <span className="text-white font-bold">+{bonusRate}%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#7E7896]">Holder Payout Tax:</span>
+                  <span className="text-[#555]">Holder Payout Tax:</span>
                   <span className="text-[#22C55E] font-bold">
                     {payoutRate}% in {pairAsset}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#7E7896]">Platform + Swap Fee:</span>
+                  <span className="text-[#555]">Platform + Swap Fee:</span>
                   <span className="text-white">0.7% + 0.3%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#7E7896]">Locked Bonus Treasury:</span>
+                  <span className="text-[#555]">Locked Bonus Treasury:</span>
                   <span className="text-white">{lockedTreasuryPct}% of Supply</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#7E7896]">Snipe Protection:</span>
+                  <span className="text-[#555]">Snipe Protection:</span>
                   <span className="text-white">
                     {snipeProtection ? "Enabled (10s decay)" : "Disabled"}
                   </span>
@@ -602,7 +602,7 @@ export function LaunchTokenView() {
                 <button
                   type="button"
                   onClick={() => setStep("economics")}
-                  className="text-xs font-medium text-[#7E7896] hover:text-white cursor-pointer"
+                  className="text-xs font-medium text-[#555] hover:text-white cursor-pointer"
                 >
                   ← Back
                 </button>
@@ -610,7 +610,7 @@ export function LaunchTokenView() {
                   type="button"
                   onClick={handleDeployContract}
                   disabled={isDeploying}
-                  className="h-11 px-6 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-xs font-bold text-white flex items-center gap-2 shadow-[0_0_25px_rgba(139,92,246,0.4)] cursor-pointer disabled:opacity-50"
+                  className="h-11 px-6 rounded-xl bg-white hover:bg-white/80 text-xs font-bold text-white flex items-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.4)] cursor-pointer disabled:opacity-50"
                 >
                   {isDeploying ? (
                     <>
@@ -631,9 +631,9 @@ export function LaunchTokenView() {
 
         {/* RIGHT COLUMN: Live "NEW LAUNCH · ECONOMICS" Interactive Card + Direct Deploy Button */}
         <div className="lg:col-span-5 rounded-2xl border border-white/[0.09] bg-[#13101E] p-6 shadow-2xl space-y-5">
-          <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.14em] text-[#7E7896]">
+          <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.14em] text-[#555]">
             <span>NEW LAUNCH · ECONOMICS</span>
-            <span className="text-[#C084FC]">LIVE CONTRACT PREVIEW</span>
+            <span className="text-white">LIVE CONTRACT PREVIEW</span>
           </div>
 
           {/* Token Identity Pill */}
@@ -641,16 +641,16 @@ export function LaunchTokenView() {
             <img
               src={logoUrl}
               alt="Logo"
-              className="w-11 h-11 rounded-xl object-cover bg-[#09080E] border border-white/[0.1]"
+              className="w-11 h-11 rounded-xl object-cover bg-[#080808] border border-white/[0.1]"
             />
             <div>
               <div className="text-base font-bold text-white">
                 ${ticker.trim().toUpperCase() || "POTR"}{" "}
-                <span className="text-xs font-normal text-[#948FA8]">
+                <span className="text-xs font-normal text-[#777]">
                   ({name.trim() || "Pixel Otter"})
                 </span>
               </div>
-              <div className="text-xs font-mono text-[#7E7896]">
+              <div className="text-xs font-mono text-[#555]">
                 {totalSupply} supply · Locked at launch
               </div>
             </div>
@@ -658,7 +658,7 @@ export function LaunchTokenView() {
 
           {/* Pair Token Select */}
           <div className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-[#0B0912] px-3.5 py-2.5">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-[#7E7896]">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#555]">
               PAIR TOKEN
             </span>
             <select
@@ -679,8 +679,8 @@ export function LaunchTokenView() {
           {/* Interactive Sliders always accessible in right preview */}
           <div>
             <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider mb-2">
-              <span className="text-[#7E7896]">INITIAL BONUS % (BUYERS)</span>
-              <span className="text-[#C084FC] font-bold">{bonusRate}%</span>
+              <span className="text-[#555]">INITIAL BONUS % (BUYERS)</span>
+              <span className="text-white font-bold">{bonusRate}%</span>
             </div>
             <input
               type="range"
@@ -690,13 +690,13 @@ export function LaunchTokenView() {
               value={bonusRate}
               onChange={(e) => handleBonusChange(parseFloat(e.target.value))}
               aria-label="Initial Bonus Percentage"
-              className="rebate-slider w-full"
+              className="bl-slider w-full"
             />
           </div>
 
           <div>
             <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider mb-2">
-              <span className="text-[#7E7896]">HOLDER PAYOUT TAX %</span>
+              <span className="text-[#555]">HOLDER PAYOUT TAX %</span>
               <span className="text-[#22C55E] font-bold">{payoutRate}%</span>
             </div>
             <input
@@ -707,7 +707,7 @@ export function LaunchTokenView() {
               value={payoutRate}
               onChange={(e) => handlePayoutChange(parseFloat(e.target.value))}
               aria-label="Holder Payout Tax Percentage"
-              className="rebate-slider w-full"
+              className="bl-slider w-full"
             />
           </div>
 
@@ -719,21 +719,21 @@ export function LaunchTokenView() {
                   r === "holders" ? "creator" : "holders"
                 )
               }
-              className="rounded-xl border border-white/[0.07] bg-[#0B0912] p-3.5 cursor-pointer hover:border-[#8B5CF6]/40 transition-colors"
+              className="rounded-xl border border-white/[0.07] bg-[#0B0912] p-3.5 cursor-pointer hover:border-white/30/40 transition-colors"
             >
-              <div className="text-[10px] font-mono uppercase text-[#645E78]">
+              <div className="text-[10px] font-mono uppercase text-[#555]">
                 PAYOUTS GO TO
               </div>
               <div className="text-base font-bold text-white mt-1 capitalize">
                 {payoutRecipient}
               </div>
-              <div className="text-[10px] text-[#7E7896] mt-0.5">
+              <div className="text-[10px] text-[#555] mt-0.5">
                 Click to toggle
               </div>
             </div>
 
             <div className="rounded-xl border border-white/[0.07] bg-[#0B0912] p-3.5">
-              <div className="text-[10px] font-mono uppercase text-[#645E78]">
+              <div className="text-[10px] font-mono uppercase text-[#555]">
                 BUYERS START AT
               </div>
               <div
@@ -745,7 +745,7 @@ export function LaunchTokenView() {
               >
                 {buyerStartAdvantage >= 0 ? `+${buyerStartAdvantage}%` : `${buyerStartAdvantage}%`}
               </div>
-              <div className="text-[10px] text-[#7E7896] mt-0.5">
+              <div className="text-[10px] text-[#555] mt-0.5">
                 Net vs pre-trade price
               </div>
             </div>
@@ -763,7 +763,7 @@ export function LaunchTokenView() {
             type="button"
             onClick={handleDeployContract}
             disabled={isDeploying}
-            className="w-full h-12 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-sm font-bold text-white flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all cursor-pointer disabled:opacity-50"
+            className="w-full h-12 rounded-xl bg-white hover:bg-white/80 text-sm font-bold text-white flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.35)] transition-all cursor-pointer disabled:opacity-50"
           >
             {isDeploying ? (
               <>
@@ -778,8 +778,8 @@ export function LaunchTokenView() {
             )}
           </button>
 
-          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#645E78]">
-            <Lock className="w-3 h-3 text-[#A855F7]" />
+          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#555]">
+            <Lock className="w-3 h-3 text-white" />
             <span>
               Locks {lockedTreasuryPct}% supply in immutable bonus treasury
             </span>

@@ -85,23 +85,23 @@ export function TokenSwapModal() {
       rate: 0,
       netTokens: baseSwapOutput,
       color: "bg-[#645E78]/60 border-[#948FA8]",
-      textColor: "text-[#948FA8]",
+      textColor: "text-[#777]",
     },
     {
       label: `${token.name} ($${token.ticker})`,
       rateLabel: `+${effectiveBonusRate}% Bonus`,
       rate: effectiveBonusRate,
       netTokens: Math.round(baseSwapOutput * (1 + effectiveBonusRate / 100)),
-      color: "bg-gradient-to-r from-[#7C3AED] to-[#A855F7] border-[#C084FC]",
-      textColor: "text-[#C084FC]",
+      color: "bg-gradient-to-r from-[#a8d420] to-[rgba(255,255,255,0.8)] border-white/30",
+      textColor: "text-white",
       highlight: true,
     },
     {
-      label: "Rebate Pad Maximum",
+      label: "BONLOOP Maximum",
       rateLabel: "+9.0% Max Bonus",
       rate: 9,
       netTokens: Math.round(baseSwapOutput * 1.09),
-      color: "bg-gradient-to-r from-[#8B5CF6]/50 to-[#D8B4FE]/80 border-[#D8B4FE]",
+      color: "bg-gradient-to-r from-[rgba(255,255,255,0.8)]/50 to-[#D8B4FE]/80 border-[#D8B4FE]",
       textColor: "text-[#D8B4FE]",
     },
   ];
@@ -154,14 +154,14 @@ export function TokenSwapModal() {
                 <h2 className="text-lg sm:text-xl font-bold text-white">
                   {token.name}
                 </h2>
-                <span className="font-mono text-xs text-[#948FA8]">
+                <span className="font-mono text-xs text-[#777]">
                   ${token.ticker}
                 </span>
-                <span className="rounded-md bg-[#8B5CF6]/20 border border-[#8B5CF6]/40 px-2 py-0.5 font-mono text-[11px] font-bold text-[#D8B4FE]">
+                <span className="rounded-md bg-white/20 border border-white/30/40 px-2 py-0.5 font-mono text-[11px] font-bold text-[#D8B4FE]">
                   +{token.bonusRate}% Instant Bonus
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono text-[#7E7896] mt-0.5">
+              <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono text-[#555] mt-0.5">
                 <span>Pair: {token.pairAsset}</span>
                 <span>·</span>
                 <button
@@ -184,7 +184,7 @@ export function TokenSwapModal() {
                   <Copy className="w-3 h-3" />
                 </button>
                 <span>·</span>
-                <span className="text-[#C084FC]">
+                <span className="text-white">
                   {token.payoutRate}% {token.pairAsset} Holder Payouts
                 </span>
               </div>
@@ -194,7 +194,7 @@ export function TokenSwapModal() {
           <button
             onClick={() => openTokenSwap(null)}
             aria-label="Close swap modal"
-            className="p-2 rounded-xl border border-white/[0.08] bg-[#1B162B] text-[#948FA8] hover:text-white cursor-pointer"
+            className="p-2 rounded-xl border border-white/[0.08] bg-[#111] text-[#777] hover:text-white cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -207,7 +207,7 @@ export function TokenSwapModal() {
             {/* Key Pool Stats Strip */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="rounded-xl border border-white/[0.06] bg-[#0B0912] p-3">
-                <div className="text-[10px] font-mono uppercase text-[#645E78]">
+                <div className="text-[10px] font-mono uppercase text-[#555]">
                   PRICE USD
                 </div>
                 <div className="font-mono text-sm font-bold text-white mt-0.5">
@@ -215,7 +215,7 @@ export function TokenSwapModal() {
                 </div>
               </div>
               <div className="rounded-xl border border-white/[0.06] bg-[#0B0912] p-3">
-                <div className="text-[10px] font-mono uppercase text-[#645E78]">
+                <div className="text-[10px] font-mono uppercase text-[#555]">
                   MARKET CAP
                 </div>
                 <div className="font-mono text-sm font-bold text-white mt-0.5">
@@ -223,7 +223,7 @@ export function TokenSwapModal() {
                 </div>
               </div>
               <div className="rounded-xl border border-white/[0.06] bg-[#0B0912] p-3">
-                <div className="text-[10px] font-mono uppercase text-[#645E78]">
+                <div className="text-[10px] font-mono uppercase text-[#555]">
                   24H VOLUME
                 </div>
                 <div className="font-mono text-sm font-bold text-white mt-0.5">
@@ -231,7 +231,7 @@ export function TokenSwapModal() {
                 </div>
               </div>
               <div className="rounded-xl border border-white/[0.06] bg-[#0B0912] p-3">
-                <div className="text-[10px] font-mono uppercase text-[#645E78]">
+                <div className="text-[10px] font-mono uppercase text-[#555]">
                   HOLDERS
                 </div>
                 <div className="font-mono text-sm font-bold text-white mt-0.5">
@@ -244,7 +244,7 @@ export function TokenSwapModal() {
             <div className="rounded-xl border border-white/[0.07] bg-[#0B0912] p-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-[#A855F7]" />
+                  <TrendingUp className="w-4 h-4 text-white" />
                   <span className="text-xs font-bold text-white">
                     ${token.ticker} / {token.pairAsset} Pool Chart
                   </span>
@@ -266,8 +266,8 @@ export function TokenSwapModal() {
                       onClick={() => setTimeframe(tf)}
                       className={`px-2 py-0.5 rounded text-[10px] font-mono ${
                         timeframe === tf
-                          ? "bg-[#8B5CF6]/25 text-[#D8B4FE] border border-[#8B5CF6]/40"
-                          : "text-[#645E78] hover:text-white"
+                          ? "bg-white/25 text-[#D8B4FE] border border-white/30/40"
+                          : "text-[#555] hover:text-white"
                       }`}
                     >
                       {tf}
@@ -283,8 +283,8 @@ export function TokenSwapModal() {
                 >
                   <defs>
                     <linearGradient id="chartArea" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="rgba(255,255,255,0.8)" stopOpacity="0.35" />
+                      <stop offset="100%" stopColor="rgba(255,255,255,0.8)" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
                   <polygon
@@ -293,7 +293,7 @@ export function TokenSwapModal() {
                   />
                   <polyline
                     fill="none"
-                    stroke="#A855F7"
+                    stroke="rgba(255,255,255,0.8)"
                     strokeWidth="3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -304,15 +304,15 @@ export function TokenSwapModal() {
             </div>
 
             {/* INTERACTIVE LAUNCHPAD BONUS COMPARISON CHART */}
-            <div className="rounded-xl border border-white/[0.08] bg-[#141122] p-4 sm:p-5">
+            <div className="rounded-xl border border-white/[0.08] bg-[#111] p-4 sm:p-5">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div className="flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4 text-[#C084FC]" />
+                  <BarChart3 className="w-4 h-4 text-white" />
                   <h3 className="text-xs font-mono uppercase tracking-wider font-bold text-white">
                     Launchpad Bonus Comparison Chart
                   </h3>
                 </div>
-                <span className="text-[11px] font-mono text-[#948FA8]">
+                <span className="text-[11px] font-mono text-[#777]">
                   Simulating{" "}
                   <strong className="text-white">{numericEth || 0.2} ETH</strong>{" "}
                   (${tradeUsd.toLocaleString()}) Swap
@@ -333,7 +333,7 @@ export function TokenSwapModal() {
                           className={
                             bar.highlight
                               ? "text-white font-bold"
-                              : "text-[#948FA8]"
+                              : "text-[#777]"
                           }
                         >
                           {bar.label}{" "}
@@ -349,7 +349,7 @@ export function TokenSwapModal() {
                           {bar.netTokens.toLocaleString()} ${token.ticker}
                         </span>
                       </div>
-                      <div className="h-3 w-full rounded-full bg-[#09080E] overflow-hidden p-0.5">
+                      <div className="h-3 w-full rounded-full bg-[#080808] overflow-hidden p-0.5">
                         <div
                           className={`h-full rounded-full border ${bar.color} transition-all duration-300`}
                           style={{ width: `${widthPct}%` }}
@@ -362,7 +362,7 @@ export function TokenSwapModal() {
 
               {/* Interactive Rate Simulator inside Chart */}
               <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between gap-3">
-                <span className="text-[11px] text-[#7E7896]">
+                <span className="text-[11px] text-[#555]">
                   Test custom bonus rate (2% – 9% max):
                 </span>
                 <input
@@ -375,11 +375,11 @@ export function TokenSwapModal() {
                     setCompareCustomRate(parseFloat(e.target.value))
                   }
                   aria-label="Simulate custom bonus rate"
-                  className="rebate-slider w-36"
+                  className="bl-slider w-36"
                 />
                 <button
                   onClick={() => setCompareCustomRate(null)}
-                  className="text-[10px] font-mono text-[#A855F7] hover:underline"
+                  className="text-[10px] font-mono text-white hover:underline"
                 >
                   Reset ({token.bonusRate}%)
                 </button>
@@ -396,8 +396,8 @@ export function TokenSwapModal() {
                   onClick={() => setSide("Buy")}
                   className={`py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                     side === "Buy"
-                      ? "bg-[#8B5CF6] text-white shadow"
-                      : "text-[#7E7896] hover:text-white"
+                      ? "bg-white text-white shadow"
+                      : "text-[#555] hover:text-white"
                   }`}
                 >
                   Buy ${token.ticker} (+{token.bonusRate}% Bonus)
@@ -407,7 +407,7 @@ export function TokenSwapModal() {
                   className={`py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                     side === "Sell"
                       ? "bg-[#EF4444] text-white shadow"
-                      : "text-[#7E7896] hover:text-white"
+                      : "text-[#555] hover:text-white"
                   }`}
                 >
                   Sell ${token.ticker}
@@ -416,7 +416,7 @@ export function TokenSwapModal() {
 
               {/* Input Box: Pay ETH */}
               <div className="rounded-xl border border-white/[0.09] bg-[#0B0912] p-4">
-                <div className="flex items-center justify-between text-[11px] font-mono text-[#7E7896] mb-2">
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#555] mb-2">
                   <span>{side === "Buy" ? "YOU PAY (ETH)" : "SELL VALUE (ETH EQUIV.)"}</span>
                   <span>
                     Balance:{" "}
@@ -436,14 +436,14 @@ export function TokenSwapModal() {
                     aria-label="Swap input amount in ETH"
                     className="w-full bg-transparent font-mono text-2xl font-bold text-white outline-none"
                   />
-                  <div className="shrink-0 flex items-center gap-1.5 rounded-lg bg-[#1B162B] border border-white/[0.08] px-3 py-1.5 font-mono text-xs font-bold text-white">
+                  <div className="shrink-0 flex items-center gap-1.5 rounded-lg bg-[#111] border border-white/[0.08] px-3 py-1.5 font-mono text-xs font-bold text-white">
                     <span>ETH</span>
                   </div>
                 </div>
 
                 {/* Preset ETH Quick Buttons */}
                 <div className="mt-3 pt-2.5 border-t border-white/[0.05] flex items-center justify-between gap-1.5">
-                  <span className="text-[11px] font-mono text-[#645E78]">
+                  <span className="text-[11px] font-mono text-[#555]">
                     ≈ ${tradeUsd.toLocaleString()} USD
                   </span>
                   <div className="flex items-center gap-1">
@@ -451,7 +451,7 @@ export function TokenSwapModal() {
                       <button
                         key={preset}
                         onClick={() => setEthInput(preset)}
-                        className="px-2 py-0.5 rounded bg-white/[0.05] hover:bg-[#8B5CF6]/25 text-[10px] font-mono text-[#D8B4FE] transition-colors cursor-pointer"
+                        className="px-2 py-0.5 rounded bg-white/[0.05] hover:bg-white/25 text-[10px] font-mono text-[#D8B4FE] transition-colors cursor-pointer"
                       >
                         {preset} ETH
                       </button>
@@ -462,14 +462,14 @@ export function TokenSwapModal() {
 
               {/* Arrow Divider */}
               <div className="my-2.5 flex justify-center">
-                <div className="w-8 h-8 rounded-lg border border-white/[0.08] bg-[#1A1528] flex items-center justify-center text-[#C084FC]">
+                <div className="w-8 h-8 rounded-lg border border-white/[0.08] bg-[#1A1528] flex items-center justify-center text-white">
                   <ArrowDownUp className="w-3.5 h-3.5" />
                 </div>
               </div>
 
               {/* Output Box: Receive Token */}
-              <div className="rounded-xl border border-[#8B5CF6]/35 bg-[#0B0912] p-4">
-                <div className="flex items-center justify-between text-[11px] font-mono text-[#7E7896] mb-1.5">
+              <div className="rounded-xl border border-white/30/35 bg-[#0B0912] p-4">
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#555] mb-1.5">
                   <span>YOU RECEIVE (ESTIMATED)</span>
                   <span>
                     Held:{" "}
@@ -486,7 +486,7 @@ export function TokenSwapModal() {
                   <div className="font-mono text-2xl font-bold text-white truncate">
                     {totalReceived.toLocaleString()}
                   </div>
-                  <div className="shrink-0 flex items-center gap-1.5 rounded-lg bg-[#1B162B] border border-[#8B5CF6]/30 px-2.5 py-1 font-mono text-xs font-bold text-[#D8B4FE]">
+                  <div className="shrink-0 flex items-center gap-1.5 rounded-lg bg-[#111] border border-white/30/30 px-2.5 py-1 font-mono text-xs font-bold text-[#D8B4FE]">
                     <img
                       src={token.logoUrl}
                       alt={token.ticker}
@@ -499,27 +499,27 @@ export function TokenSwapModal() {
 
               {/* ITEMIZED BONUS BREAKDOWN RECEIPT */}
               <div className="mt-4 rounded-xl border border-white/[0.08] bg-[#0E0B16] p-4 space-y-2.5 font-mono text-xs">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[#7E7896] pb-1 border-b border-white/[0.05]">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[#555] pb-1 border-b border-white/[0.05]">
                   <span>BONUS BREAKDOWN</span>
-                  <span className="text-[#C084FC]">LOCKED CONTRACT RULES</span>
+                  <span className="text-white">LOCKED CONTRACT RULES</span>
                 </div>
 
-                <div className="flex items-center justify-between text-[#948FA8]">
+                <div className="flex items-center justify-between text-[#777]">
                   <span>Base swap output</span>
                   <span className="text-white font-semibold">
                     {baseSwapOutput.toLocaleString()} ${token.ticker}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between text-[#948FA8]">
+                <div className="flex items-center justify-between text-[#777]">
                   <span>
                     Extra tokens (Bonus{" "}
-                    <strong className="text-[#C084FC]">
+                    <strong className="text-white">
                       +{side === "Buy" ? token.bonusRate : 0}%
                     </strong>
                     )
                   </span>
-                  <span className="text-[#C084FC] font-bold">
+                  <span className="text-white font-bold">
                     +{extraBonusTokens.toLocaleString()} ${token.ticker}
                   </span>
                 </div>
@@ -527,7 +527,7 @@ export function TokenSwapModal() {
                 <div className="pt-2.5 border-t border-dashed border-white/[0.1] flex items-center justify-between">
                   <div>
                     <span className="text-white font-bold">Total Received</span>
-                    <div className="text-[10px] text-[#645E78]">
+                    <div className="text-[10px] text-[#555]">
                       Credited in the same transaction
                     </div>
                   </div>
@@ -536,7 +536,7 @@ export function TokenSwapModal() {
                       {totalReceived.toLocaleString()} ${token.ticker}
                     </div>
                     {side === "Buy" && (
-                      <span className="inline-block rounded border border-[#A855F7]/60 bg-[#A855F7]/15 px-1.5 py-0.5 text-[10px] font-bold text-[#D8B4FE]">
+                      <span className="inline-block rounded border border-white/30/60 bg-white/15 px-1.5 py-0.5 text-[10px] font-bold text-[#D8B4FE]">
                         +{extraBonusTokens.toLocaleString()} EXTRA
                       </span>
                     )}
@@ -552,7 +552,7 @@ export function TokenSwapModal() {
                 disabled={isSwapping || numericEth <= 0}
                 className={`w-full h-12 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg ${
                   side === "Buy"
-                    ? "bg-[#8B5CF6] hover:bg-[#7C3AED] text-white shadow-[0_0_25px_rgba(139,92,246,0.4)]"
+                    ? "bg-white hover:bg-white/80 text-white shadow-[0_0_25px_rgba(255,255,255,0.4)]"
                     : "bg-[#EF4444] hover:bg-[#DC2626] text-white"
                 } disabled:opacity-50`}
               >
@@ -580,13 +580,13 @@ export function TokenSwapModal() {
                 )}
               </button>
 
-              <div className="mt-3 flex items-center justify-between text-[11px] text-[#645E78]">
+              <div className="mt-3 flex items-center justify-between text-[11px] text-[#555]">
                 <span className="flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" />
                   <span>Rates fixed at launch</span>
                 </span>
                 <span className="flex items-center gap-1">
-                  <Coins className="w-3.5 h-3.5 text-[#A855F7]" />
+                  <Coins className="w-3.5 h-3.5 text-white" />
                   <span>
                     {token.payoutRate}% {token.pairAsset} holder dividends
                   </span>
