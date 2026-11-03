@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 import {
   Compass,
   Calculator,
@@ -40,7 +41,7 @@ export function GuideView() {
 
         <div className="w-36 h-36 sm:w-44 sm:h-44 shrink-0 drop-shadow-[0_14px_34px_rgba(168,85,247,0.45)]">
           <img
-            src="/images/ruby-mascot.png"
+            src={TOKEN_ARTWORKS.ruby}
             alt="Ruby mascot"
             className="w-full h-full object-contain rounded-2xl"
           />

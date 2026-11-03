@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useRef } from "react";
+import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 import {
   ArrowRight,
   ChevronLeft,
@@ -213,7 +214,7 @@ export function DiscoverView() {
               {/* Ruby Mascot peeking on the left of the Buy Preview card */}
               <div className="hidden xl:block absolute -left-24 bottom-2 w-36 h-36 z-20 pointer-events-none select-none drop-shadow-[0_12px_28px_rgba(139,92,246,0.45)]">
                 <img
-                  src="/images/ruby-mascot.png"
+                  src={TOKEN_ARTWORKS.ruby}
                   alt="Ruby Mascot"
                   className="w-full h-full object-contain rounded-2xl"
                 />

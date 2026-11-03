@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 import {
   Search,
   Gift,
@@ -47,7 +48,7 @@ export function RewardsView() {
 
     return {
       ...h,
-      logoUrl: token?.logoUrl || "/images/ruby-mascot.png",
+      logoUrl: token?.logoUrl || TOKEN_ARTWORKS.ruby,
       payoutRate: token?.payoutRate || 2,
       bonusRate: token?.bonusRate || 5,
       bonusUsd,

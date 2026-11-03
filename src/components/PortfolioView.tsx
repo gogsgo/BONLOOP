@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 import {
   Wallet,
   Gift,
@@ -50,7 +51,7 @@ export function PortfolioView() {
 
     return {
       ...h,
-      logoUrl: token?.logoUrl || "/images/ruby-mascot.png",
+      logoUrl: token?.logoUrl || TOKEN_ARTWORKS.ruby,
       livePrice,
       valueUsd,
       valueEth,
@@ -150,7 +151,7 @@ export function PortfolioView() {
         <div className="rounded-2xl border border-dashed border-white/[0.1] bg-[#0D0B14]/80 py-20 px-6 flex flex-col items-center justify-center text-center">
           <div className="w-32 h-32 mb-5 drop-shadow-[0_12px_30px_rgba(168,85,247,0.4)]">
             <img
-              src="/images/ruby-mascot.png"
+              src={TOKEN_ARTWORKS.ruby}
               alt="Ruby waving"
               className="w-full h-full object-contain rounded-2xl"
             />

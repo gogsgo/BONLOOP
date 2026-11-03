@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 import {
   Image as ImageIcon,
   CheckCircle2,
@@ -12,15 +13,14 @@ import {
   Rocket,
 } from "lucide-react";
 import { useRebateStore } from "@/store/useRebateStore";
-import { TOKEN_ARTWORKS } from "@/lib/seed-data";
 
 type LaunchStep = "details" | "links" | "economics" | "review";
 
 const PRESET_LOGOS = [
-  { label: "Ruby Mascot", url: "/images/ruby-mascot.png" },
-  { label: "Rebate Cat", url: "/images/token-rebate-cat.png" },
-  { label: "ROTH IPA", url: "/images/token-roth-ipa.png" },
-  { label: "REBAPE", url: "/images/token-rebape.png" },
+  { label: "Ruby Mascot", url: TOKEN_ARTWORKS.ruby },
+  { label: "Rebate Cat", url: TOKEN_ARTWORKS.rcat },
+  { label: "ROTH IPA", url: TOKEN_ARTWORKS.ipa },
+  { label: "REBAPE", url: TOKEN_ARTWORKS.rebape },
   { label: "Cyber Wolf", url: TOKEN_ARTWORKS.rebog },
   { label: "Diamond HODL", url: TOKEN_ARTWORKS.hodl },
 ];
@@ -39,7 +39,7 @@ export function LaunchTokenView() {
   const [ticker, setTicker] = useState<string>("");
   const [totalSupply, setTotalSupply] = useState<string>("1,000,000,000");
   const [description, setDescription] = useState<string>("");
-  const [logoUrl, setLogoUrl] = useState<string>("/images/token-rebate-cat.png");
+  const [logoUrl, setLogoUrl] = useState<string>(TOKEN_ARTWORKS.rcat);
   const [fileName, setFileName] = useState<string>("No file chosen");
 
   // Links & Protection

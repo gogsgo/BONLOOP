@@ -180,6 +180,147 @@ export const TOKEN_ARTWORKS = {
       <text x="200" y="272" text-anchor="middle" fill="#090b0a" font-family="serif" font-weight="900" font-size="115">α</text>
     </svg>
   `),
+  ruby: svgToDataUrl(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+      <rect width="400" height="400" fill="#0f0b1a"/>
+      <circle cx="200" cy="185" r="130" fill="#7c3aed"/>
+      <circle cx="200" cy="185" r="130" fill="url(#rg1)"/>
+      <defs>
+        <radialGradient id="rg1" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#c084fc"/>
+          <stop offset="60%" stop-color="#7c3aed"/>
+          <stop offset="100%" stop-color="#3b0764"/>
+        </radialGradient>
+      </defs>
+      <!-- ears -->
+      <polygon points="130,80 100,30 160,70" fill="#9333ea"/>
+      <polygon points="270,80 300,30 240,70" fill="#9333ea"/>
+      <polygon points="133,78 110,42 158,72" fill="#f9a8d4"/>
+      <polygon points="267,78 290,42 242,72" fill="#f9a8d4"/>
+      <!-- eyes -->
+      <ellipse cx="165" cy="170" rx="18" ry="22" fill="#fff"/>
+      <ellipse cx="235" cy="170" rx="18" ry="22" fill="#fff"/>
+      <circle cx="170" cy="172" r="10" fill="#1a0533"/>
+      <circle cx="240" cy="172" r="10" fill="#1a0533"/>
+      <circle cx="174" cy="168" r="4" fill="#fff"/>
+      <circle cx="244" cy="168" r="4" fill="#fff"/>
+      <!-- nose -->
+      <ellipse cx="200" cy="207" rx="8" ry="6" fill="#f472b6"/>
+      <!-- mouth -->
+      <path d="M185 218 Q200 232 215 218" fill="none" stroke="#1a0533" stroke-width="4" stroke-linecap="round"/>
+      <!-- whiskers -->
+      <line x1="100" y1="205" x2="175" y2="210" stroke="#e9d5ff" stroke-width="2" opacity="0.7"/>
+      <line x1="100" y1="215" x2="175" y2="215" stroke="#e9d5ff" stroke-width="2" opacity="0.7"/>
+      <line x1="225" y1="210" x2="300" y2="205" stroke="#e9d5ff" stroke-width="2" opacity="0.7"/>
+      <line x1="225" y1="215" x2="300" y2="215" stroke="#e9d5ff" stroke-width="2" opacity="0.7"/>
+      <!-- tail -->
+      <path d="M310 300 Q360 250 330 200 Q310 170 340 150" fill="none" stroke="#9333ea" stroke-width="18" stroke-linecap="round"/>
+      <!-- $RUBY badge -->
+      <rect x="145" y="298" width="110" height="30" rx="15" fill="#4c1d95"/>
+      <text x="200" y="318" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-weight="900" font-size="16">$RUBY</text>
+    </svg>
+  `),
+  rebape: svgToDataUrl(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+      <defs>
+        <radialGradient id="apebg" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#422006"/>
+          <stop offset="100%" stop-color="#0c0a06"/>
+        </radialGradient>
+      </defs>
+      <rect width="400" height="400" fill="url(#apebg)"/>
+      <!-- face -->
+      <ellipse cx="200" cy="205" rx="115" ry="120" fill="#78350f"/>
+      <!-- muzzle -->
+      <ellipse cx="200" cy="250" rx="60" ry="45" fill="#a16207"/>
+      <!-- brow ridge -->
+      <ellipse cx="200" cy="148" rx="95" ry="38" fill="#92400e"/>
+      <!-- eyes -->
+      <ellipse cx="162" cy="175" rx="20" ry="18" fill="#fff"/>
+      <ellipse cx="238" cy="175" rx="20" ry="18" fill="#fff"/>
+      <circle cx="166" cy="176" r="11" fill="#1c1917"/>
+      <circle cx="242" cy="176" r="11" fill="#1c1917"/>
+      <circle cx="170" cy="172" r="4" fill="#fff"/>
+      <circle cx="246" cy="172" r="4" fill="#fff"/>
+      <!-- nose -->
+      <ellipse cx="200" cy="228" rx="15" ry="10" fill="#292524"/>
+      <!-- mouth -->
+      <path d="M178 252 Q200 268 222 252" fill="none" stroke="#292524" stroke-width="5" stroke-linecap="round"/>
+      <!-- rebate arrow badge -->
+      <rect x="130" y="305" width="140" height="36" rx="18" fill="#9333ea"/>
+      <text x="200" y="328" text-anchor="middle" fill="#fff" font-family="monospace" font-weight="900" font-size="15">+3% REBATE</text>
+    </svg>
+  `),
+  ipa: svgToDataUrl(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+      <defs>
+        <linearGradient id="beerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fef08a"/>
+          <stop offset="40%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#b45309"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="400" fill="#0c0905"/>
+      <!-- mug body -->
+      <rect x="110" y="120" width="160" height="200" rx="14" fill="url(#beerGrad)" stroke="#fef08a" stroke-width="3"/>
+      <!-- foam top -->
+      <ellipse cx="190" cy="118" rx="82" ry="28" fill="#fff"/>
+      <ellipse cx="160" cy="104" rx="32" ry="24" fill="#fff"/>
+      <ellipse cx="215" cy="100" rx="28" ry="22" fill="#fff"/>
+      <ellipse cx="245" cy="110" rx="25" ry="20" fill="#fff"/>
+      <!-- handle -->
+      <path d="M270 165 Q325 165 325 210 Q325 255 270 255" fill="none" stroke="#fef08a" stroke-width="18" stroke-linecap="round"/>
+      <!-- bubbles -->
+      <circle cx="160" cy="200" r="8" fill="#fef9c3" opacity="0.6"/>
+      <circle cx="195" cy="230" r="6" fill="#fef9c3" opacity="0.5"/>
+      <circle cx="225" cy="195" r="5" fill="#fef9c3" opacity="0.6"/>
+      <circle cx="175" cy="255" r="7" fill="#fef9c3" opacity="0.4"/>
+      <!-- label -->
+      <rect x="125" y="185" width="130" height="70" rx="6" fill="#7c2d12" opacity="0.85"/>
+      <text x="190" y="212" text-anchor="middle" fill="#fef08a" font-family="serif" font-weight="900" font-size="18">ROTH IPA</text>
+      <text x="190" y="238" text-anchor="middle" fill="#fed7aa" font-family="monospace" font-size="11">+5% BONUS</text>
+    </svg>
+  `),
+  rcat: svgToDataUrl(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+      <defs>
+        <radialGradient id="catbg" cx="40%" cy="35%" r="70%">
+          <stop offset="0%" stop-color="#1e3a2f"/>
+          <stop offset="100%" stop-color="#030f09"/>
+        </radialGradient>
+      </defs>
+      <rect width="400" height="400" fill="url(#catbg)"/>
+      <!-- ears -->
+      <polygon points="135,115 105,55 175,100" fill="#065f46"/>
+      <polygon points="265,115 295,55 225,100" fill="#065f46"/>
+      <polygon points="138,112 118,68 170,102" fill="#6ee7b7"/>
+      <polygon points="262,112 282,68 230,102" fill="#6ee7b7"/>
+      <!-- head -->
+      <ellipse cx="200" cy="210" rx="120" ry="115" fill="#047857"/>
+      <!-- face markings -->
+      <ellipse cx="200" cy="230" rx="70" ry="55" fill="#065f46" opacity="0.5"/>
+      <!-- eyes -->
+      <ellipse cx="162" cy="185" rx="20" ry="24" fill="#d1fae5"/>
+      <ellipse cx="238" cy="185" rx="20" ry="24" fill="#d1fae5"/>
+      <!-- slit pupils -->
+      <ellipse cx="162" cy="185" rx="6" ry="20" fill="#064e3b"/>
+      <ellipse cx="238" cy="185" rx="6" ry="20" fill="#064e3b"/>
+      <circle cx="157" cy="179" r="4" fill="#fff" opacity="0.8"/>
+      <circle cx="233" cy="179" r="4" fill="#fff" opacity="0.8"/>
+      <!-- nose -->
+      <polygon points="200,218 193,228 207,228" fill="#34d399"/>
+      <!-- mouth -->
+      <path d="M185 235 Q200 248 215 235" fill="none" stroke="#064e3b" stroke-width="4" stroke-linecap="round"/>
+      <!-- whiskers -->
+      <line x1="95" y1="222" x2="180" y2="225" stroke="#6ee7b7" stroke-width="2" opacity="0.8"/>
+      <line x1="95" y1="232" x2="180" y2="232" stroke="#6ee7b7" stroke-width="2" opacity="0.8"/>
+      <line x1="220" y1="225" x2="305" y2="222" stroke="#6ee7b7" stroke-width="2" opacity="0.8"/>
+      <line x1="220" y1="232" x2="305" y2="232" stroke="#6ee7b7" stroke-width="2" opacity="0.8"/>
+      <!-- badge -->
+      <rect x="135" y="300" width="130" height="30" rx="15" fill="#065f46"/>
+      <text x="200" y="320" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-weight="900" font-size="14">+4.5% RCAT</text>
+    </svg>
+  `),
   etaber: svgToDataUrl(`
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
       <defs>
@@ -229,7 +370,7 @@ export const INITIAL_TOKENS: NewTokenRecord[] = [
     ticker: "RUBY",
     description:
       "Meet Ruby: the official Rebate Pad mascot token. First to spot a bonus, loudest when ETH holder payouts land straight in your wallet.",
-    logoUrl: "/images/ruby-mascot.png",
+    logoUrl: TOKEN_ARTWORKS.ruby,
     creatorAddress: "0x8a4d...91c2",
     contractAddress: "0x8a4d7721b90e44f1a22c91c2",
     pairAsset: "ETH",
@@ -256,7 +397,7 @@ export const INITIAL_TOKENS: NewTokenRecord[] = [
     ticker: "APE",
     description:
       "Apes don't start from zero. REBAPE rewards every buyer with +3% instant bonus tokens and streams 2% ETH dividends to diamond-handed holders on Robinhood Chain.",
-    logoUrl: "/images/token-rebape.png",
+    logoUrl: TOKEN_ARTWORKS.rebape,
     creatorAddress: "0x71f0...c8a1",
     contractAddress: "0x71f0992bc41e88d3a109c8a1",
     pairAsset: "ETH",
@@ -310,7 +451,7 @@ export const INITIAL_TOKENS: NewTokenRecord[] = [
     ticker: "IPA",
     description:
       "Tax-free retirement hops on Robinhood Chain. Crack open a cold +5% instant purchase bonus and collect 2% ETH holder payouts.",
-    logoUrl: "/images/token-roth-ipa.png",
+    logoUrl: TOKEN_ARTWORKS.ipa,
     creatorAddress: "0x92b4...11d9",
     contractAddress: "0x92b4551ac70e21f8b31111d9",
     pairAsset: "ETH",
@@ -337,7 +478,7 @@ export const INITIAL_TOKENS: NewTokenRecord[] = [
     ticker: "RCAT",
     description:
       "Nine lives of instant swap rebates. Rebate Cat credits +4.5% extra tokens on every buy and distributes 1.5% USDG volume dividends.",
-    logoUrl: "/images/token-rebate-cat.png",
+    logoUrl: TOKEN_ARTWORKS.rcat,
     creatorAddress: "0x15a9...77e4",
     contractAddress: "0x15a9004bc31d77e2a90177e4",
     pairAsset: "USDG",
